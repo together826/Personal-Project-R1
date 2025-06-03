@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mt. TW - index</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #334B35;
+            color: #F6EEE0;
+        }
+
+        /* Header Styles */
+        header {
+            width: 100%;
+            height: 80px;
+            background-color: #334B35;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            font-size: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-item {
+            position: relative;
+            cursor: pointer;
+            color: #F6EEE0;
+            transition: all 0.3s ease;
+            height: 30px;
+            line-height: 30px;
+            margin-top: 50px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .nav-item::after {
+            content: attr(data-en);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background-color: #E8A520;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Fugaz One', cursive;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .nav-item:hover::after {
+            opacity: 1;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+            transform: scale(0.7);
+            padding-top: 25px;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-wrapper a {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-family: 'Fugaz One', cursive;
+            font-size: 15px;
+            color: #F6EEE0;
+            margin-top: -15px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+            cursor: pointer;
+            transform: translateY(25px);
+        }
+
+        .hero {
+            width: 1651px;
+            height: 806px;
+            margin: 40px auto;
+            border-radius: 60px;
+            background: url(img/IMG_6450.JPG) center center / cover no-repeat;
+            box-shadow: 12px 12px 0px #E8A520;
+            position: relative;
+            overflow: visible;
+        }
+
+        .slogan {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #F6EEE0;
+            font-family: 'Fugaz One', cursive;
+            font-size: 50px;
+            text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+            white-space: nowrap;
+        }
+
+        .corner-box {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .mt-title {
+            font-family: 'Fugaz One', cursive;
+            font-size: 120px;
+            text-shadow: 5px 5px 0px #E8A520;
+            color: #000;
+            margin-left: 30px;
+            z-index: 2;
+        }
+
+        .beige-box {
+            width: 560px;
+            height: 145px;
+            background-color: #F6EEE0;
+            position: absolute;
+            left: -30px;
+            top: 10px;
+            z-index: 1;
+        }
+
+        .hero-pattern-above,
+        .hero-pattern-below {
+            position: absolute;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .hero-pattern-above {
+            top: 750px;
+            z-index: 1;
+        }
+
+        .hero-pattern-below {
+            top: 550px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .marquee-wrapper {
+            display: flex;
+            position: absolute;
+            white-space: nowrap;
+            font-family: "Fugaz One", cursive;
+            font-size: 220px;
+            font-weight: 400;
+            -webkit-text-stroke: 1.5px #F6EEE1;
+            color: transparent;
+            opacity: 0.4;
+            width: max-content;
+        }
+
+        .marquee-wrapper span {
+            padding-right: 100px;
+        }
+
+        .marquee-left {
+            animation: scroll-left 200s linear infinite;
+            left: 0;
+        }
+
+        .marquee-right {
+            animation: scroll-right 200s linear infinite;
+            right: 0;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes scroll-right {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(50%);
+            }
+        }
+
+        /* Trail Styles */
+        .trail-section {
+            position: relative;
+            padding: 60px 40px;
+            background-color: #F6EEE0;
+        }
+
+        .bg-marquee-line {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            z-index: 0;
+            opacity: 0.15;
+        }
+
+        .bg-marquee-line h1 {
+            display: inline-block;
+            font-size: 160px;
+            font-family: 'Fugaz One', cursive;
+            animation: marquee-left 200s linear infinite;
+            color: #3C6C44;
+        }
+
+        .bg-marquee-line.middle h1 {
+            color: transparent;
+            -webkit-text-stroke: 2px #3C6C44;
+            animation: marquee-right 200s linear infinite;
+            font-weight: lighter;
+        }
+
+        .bg-marquee-line.top {
+            top: -50px;
+        }
+
+        .bg-marquee-line.middle {
+            top: 130px;
+        }
+
+        .bg-marquee-line.bottom {
+            top: 300px;
+        }
+
+        @keyframes marquee-left {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes marquee-right {
+            0% {
+                transform: translateX(-70%);
+            }
+
+            100% {
+                transform: translateX(0%);
+            }
+        }
+
+        .trail-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            width: 800px;
+            height: 59px;
+            background: #FFF;
+            border-radius: 60px;
+            overflow: visible;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            padding: 0 20px;
+            position: relative;
+            top: -20px;
+            z-index: 10;
+        }
+
+        .filter-section {
+            display: flex;
+            align-items: center;
+        }
+
+        details {
+            position: relative;
+            display: inline-block;
+            padding: 0 16px;
+            cursor: default;
+        }
+
+        summary {
+            list-style: none;
+            font-size: 16px;
+            color: #333;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            padding-right: 20px;
+        }
+
+        summary span {
+            display: inline-block;
+            width: 90px;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "▼";
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 12px;
+        }
+
+        details[open] summary::after {
+            content: "▲";
+        }
+
+        details ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            color: #000;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 8px 0;
+            margin: 0;
+            list-style: none;
+            z-index: 100;
+            width: 120px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        details ul li {
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        details ul li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .divider {
+            width: 1px;
+            height: 24px;
+            background-color: #ccc;
+            margin: 0 8px;
+        }
+
+        .search-input {
+            flex: 1;
+            height: 100%;
+            border: none;
+            outline: none;
+            padding: 0 16px;
+            font-size: 16px;
+            color: #888;
+            background-color: transparent;
+        }
+
+        .search-button {
+            width: 206px;
+            height: 60px;
+            min-width: 206px;
+            flex-shrink: 0;
+            background: #E8A520;
+            color: #FFF;
+            font-family: 'Fugaz One';
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .trail-images {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 0;
+            position: relative;
+        }
+
+        .trail-card {
+            position: relative;
+            width: 398px;
+            height: 783px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 5px 4px 0px 0px #283A29;
+            overflow: hidden;
+            transition: transform 0.5s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .trail-card:hover .trail-info {
+            opacity: 1;
+            height: 783px;
+            transform: translateY(0%);
+        }
+
+        .trail-info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #FFF;
+            padding: 24px;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .trail-info h2 {
+            font-size: 80px;
+            font-weight: 700;
+            color: #E8A520;
+            text-shadow: 3px 3px 0px #000000;
+            margin-bottom: 16px;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            margin-left: -30px;
+        }
+
+        .trail-info p {
+            font-size: 16px;
+            line-height: 24px;
+            opacity: 0.8;
+            margin-left: 5px;
+        }
+
+        .more-button-wrapper {
+            width: fit-content;
+            margin-left: auto;
+            margin-right: 0;
+            position: relative;
+            height: 0;
+        }
+
+        .more-button {
+            position: absolute;
+            right: 20;
+            bottom: -80px;
+            background: #E8A520;
+            color: #FFF;
+            font-size: 24px;
+            font-family: 'Fugaz One';
+            border: none;
+            padding: 12px 40px;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            text-decoration: none;
+        }
+
+        .slogan-fixed {
+            position: absolute;/* 從 fixed 改為 absolute */
+            bottom: 20px;
+            right: 250px;
+            font-size: 22px;
+            color: #F6EEE0;
+            background-color: transparent;
+            z-index: 99;
+        }
+
+        .trail-bg-decor {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bg-bottom-fill {
+            width: 100%;
+            height: 250px;
+            background-color: #334B35;
+        }
+
+        /* News Styles */
+        .news-section {
+            padding: 60px 60px;
+            position: relative;
+            overflow: hidden;
+            background-color: #F6EEE0;
+        }
+
+        .news-title {
+            position: relative;
+            margin-left: 350px;
+            margin-bottom: 40px;
+        }
+
+        .news-title h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 74px;
+            font-weight: 900;
+            color: #000;
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+        }
+
+        .title-bg {
+            position: absolute;
+            width: 247px;
+            height: 39px;
+            background: #fff;
+            left: 0;
+            bottom: 10px;
+            z-index: 1;
+        }
+
+        .green-bg {
+            position: absolute;
+            background: #3C6C44;
+            opacity: 0.3;
+            width: 562px;
+            height: 190px;
+            z-index: 0;
+        }
+
+        .bg1 {
+            top: 130px;
+            left: 250px;
+        }
+
+        .bg2 {
+            bottom: 100px;
+            right: 0;
+        }
+
+        .news-cards-wrapper {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1380px;
+            margin: 0 auto;
+        }
+
+        .arrow {
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+            opacity: 0.7;
+            color: #000;
+        }
+
+        .news-cards-container {
+            display: flex;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .news-cards-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .news-card {
+            align-items: center;
+            text-align: center;
+            width: 273px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card-img {
+            width: 273px;
+            height: 205px;
+            border-radius: 30px;
+            background-color: lightgray;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 2px 2px 0px 3px #E8A520;
+        }
+
+        .card-title {
+            width: 258px;
+            color: #000;
+            font-size: 24px;
+        }
+
+        .card-desc {
+            width: 250px;
+            height: 72px;
+            color: #000;
+            font-size: 16px;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            color: #000;
+            font-size: 12px;
+            opacity: 0.5;
+            display: flex;
+            justify-content: space-between;
+            width: 250px;
+        }
+
+        .news-divider {
+            width: 1px;
+            height: auto;
+            background-color: rgba(0, 0, 0, 0.3);
+            margin: 0 15px;
+        }
+
+        .news-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Journal Styles */
+        .journal-section {
+            background-color: #283A29;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .marquee-row {
+            width: 100vw;
+            overflow: hidden;
+            margin-block: 40px;
+        }
+
+        .journal-marquee-wrapper {
+            display: flex;
+            width: fit-content;
+            animation: scroll-left 500s linear infinite;
+        }
+
+        .row2 .journal-marquee-wrapper {
+            animation-name: scroll-left;
+        }
+
+        .marquee-item {
+            flex-shrink: 0;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            margin-right: 16px;
+        }
+
+        .marquee-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .row1 .marquee-item,
+        .row3 .marquee-item {
+            height: 195px;
+            width: 260px;
+        }
+
+        .row2 .marquee-item {
+            height: 261px;
+            width: 417.6px;
+        }
+
+        .green-quote {
+            background: linear-gradient(0deg, rgba(60, 108, 68, 0.9), rgba(60, 108, 68, 0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .green-quote p {
+            width: 216px;
+            font-family: "Fugaz One";
+            font-size: 15px;
+            color: #E8A520;
+            text-align: center;
+        }
+
+        .hover-box {
+            overflow: hidden;
+            border-radius: 30px;
+            transition: border-radius 0.3s ease, box-shadow 0.1s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .hover-box:hover {
+            border-radius: 0;
+            box-shadow: 3px 3px 0px 3px #E8A520;
+        }
+
+        .hover-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .hover-box:hover img {
+            transform: scale(1.1);
+        }
+
+        .hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #F6EEE1;
+            box-shadow: 3px 3px 0px 3px #E8A520;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .hover-box:hover .hover-overlay {
+            opacity: 1;
+        }
+
+        .hover-overlay h3 {
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hover-overlay .info {
+            font-size: 16px;
+            color: #E8A520;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .hover-overlay .desc {
+            font-size: 16px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Sell Styles */
+        .bestseller-section {
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+            background-color: #EEE7DD;
+        }
+
+        .bg-watermark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            font-family: "Fugaz One";
+            font-size: 220px;
+            font-weight: 400;
+            line-height: normal;
+            color: transparent;
+            -webkit-text-stroke: 0.6px #3C6C44;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bg-watermark div {
+            line-height: 180px;
+            white-space: nowrap;
+        }
+
+        .bg-watermark div:nth-child(odd) {
+            transform: translateX(0);
+        }
+
+        .bg-watermark div:nth-child(even) {
+            transform: translateX(80px);
+        }
+
+        .section-title {
+            position: relative;
+            font-family: 'Inter', sans-serif;
+            font-size: 74px;
+            font-weight: 900;
+            color: #000;
+            display: inline-block;
+            padding: 0 20px;
+            margin-bottom: 60px;
+            margin-left: 365px;
+            z-index: 1;
+        }
+
+        .sell-title-bg {
+            position: absolute;
+            width: 600px;
+            height: 39px;
+            background: #fff;
+            margin-left: 410px;
+            bottom: 590px;
+            z-index: 0;
+        }
+
+        .cards-wrapper {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background-color: #3C6C44;
+            width: 340px;
+            height: 320px;
+            border-radius: 40px;
+            padding: 0px;
+            color: white;
+            text-align: center;
+            position: relative;
+            transition: transform 0.5s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card img {
+            width: 200px;
+            height: auto;
+            margin-top: -60px;
+        }
+
+        .tag {
+            background-color: #BFD6C6;
+            color: #3C6C44;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .product-name {
+            margin-top: 14px;
+            font-size: 18px;
+        }
+
+        .product-desc {
+            font-size: 16px;
+            margin-top: 4px;
+        }
+
+        .card-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            margin-top: 10px;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .left-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+        }
+
+        .right-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .buy-button {
+            margin-top: 30px;
+            padding: 6px 14px;
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #E8A520;
+            color: #283A29;
+            border-color: #E8A520;
+        }
+
+        .price {
+            margin-top: 20px;
+            font-size: 28px;
+            color: #E8A520;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+
+        .sell-more-button {
+            margin: 50px auto 0;
+            display: block;
+            background-color: #3C6C44;
+            color: white;
+            font-size: 24px;
+            font-family: 'Fugaz One';
+            padding: 8px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #283A29;
+            color: #EEE7DD;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 80px;
+            height: 270px;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            margin-left: 365px;
+        }
+
+        .footer-left img {
+            width: 80px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .footer-text {
+            font-family: 'Fugaz One';
+        }
+
+        .footer-text h1 {
+            font-size: 32px;
+            margin: 0;
+            color: #F6EEE1;
+        }
+
+        .footer-text p {
+            margin-top: 6px;
+            font-size: 14px;
+            color: #EEE7DD;
+        }
+
+        .footer-right {
+            text-align: left;
+            font-family: 'Fugaz One';
+            margin-right: 364px;
+        }
+
+        .footer-right h3 {
+            color: #E8A520;
+            margin-bottom: 16px;
+            font-size: 22px;
+        }
+
+        .social-icons a {
+            margin-left: 10px;
+            font-size: 24px;
+            color: #E8A520;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav">
+            <a href="trail.html" class="nav-item" data-en="trail">找路線</a>
+            <a href="news.html" class="nav-item" data-en="news">山系速報</a>
+            <a href="journal.html" class="nav-item" data-en="journal">山人小誌</a>
+        </div>
+        <div class="logo-wrapper">
+            <a href="Index.html">
+                <img src="icon/logo.svg" alt="logo" class="logo">
+                <div class="logo-text">Mt. TW</div>
+            </a>
+        </div>
+        <div class="nav">
+            <a href="store.html" class="nav-item" data-en="store">山用選物</a>
+            <a href="login.html" class="nav-item" data-en="member">會員中心</a>
+            <img src="https://www.svgrepo.com/show/532555/search.svg" class="icon" alt="search">
+            <img src="./icon/cart.png" class="icon" alt="cart">
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-pattern-below">
+        <div class="marquee-wrapper marquee-right">
+            <span>Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW</span>
+            <span>Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW</span>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="slogan">Explore. Record. Connect.</div>
+        <div class="corner-box">
+            <div class="mt-title">Mt. TW</div>
+            <div class="beige-box"></div>
+        </div>
+    </div>
+
+    <div class="hero-pattern-above">
+        <div class="marquee-wrapper marquee-left">
+            <span>Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW</span>
+            <span>Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW</span>
+        </div>
+    </div>
+
+    <!-- Trail Section -->
+    <section class="trail-section">
+        <div class="bg-marquee-line top">
+            <h1>Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW.</h1>
+        </div>
+        <div class="bg-marquee-line middle">
+            <h1>Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW.</h1>
+        </div>
+        <div class="bg-marquee-line bottom">
+            <h1>Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW.</h1>
+        </div>
+
+        <div class="trail-content">
+            <div class="search-bar">
+                <div class="filter-section">
+                    <details class="filter">
+                        <summary><span data-default="區域">區域</span></summary>
+                        <ul>
+                            <li>北部</li>
+                            <li>中部</li>
+                            <li>南部</li>
+                            <li>東部</li>
+                        </ul>
+                    </details>
+                    <div class="divider"></div>
+                    <details class="filter">
+                        <summary><span data-default="難度">難度</span></summary>
+                        <ul>
+                            <li>低</li>
+                            <li>低-中</li>
+                            <li>中</li>
+                            <li>中-高</li>
+                            <li>高</li>
+                        </ul>
+                    </details>
+                    <div class="divider"></div>
+                    <details class="filter">
+                        <summary><span data-default="時間">時間</span></summary>
+                        <ul>
+                            <li>3小時內</li>
+                            <li>3–6小時</li>
+                            <li>6–12小時</li>
+                            <li>12小時–2天</li>
+                            <li>兩天以上</li>
+                        </ul>
+                    </details>
+                    <div class="divider"></div>
+                </div>
+                <input type="text" placeholder="路線名稱/相關山岳" class="search-input" />
+                <a href="trail.html" class="search-button">SEARCH</a>
+            </div>
+
+            <div class="trail-images">
+                <div class="trail-card" style="background-image: url(img/玉山001.jpg);">
+                    <div class="trail-info">
+                        <h2>玉山主峰</h2>
+                        <p>2,341 人想去 | 4,581 人去過 | 406,533 次點閱<br><br>
+                            玉山主峰位於台灣的中心位置，海拔3952公尺，為台灣群山之首，百岳排名第一，也是東北亞的最高峰。主峰四周有東、南、西、北峰環繞，外圍還有前峰、小南山、南玉山、東小南山、鹿山與北北峰遙相呼應，宛如眾星拱月般，襯托出主峰的王者之尊，壯偉雄奇的山容、絕佳的展望和絢麗的日出景觀，吸引了無數的中外登山客前來攀登，近年來更成為台灣人一生必須完成的三件事之一。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="trail-card" style="background-image: url(img/合歡.jpg);">
+                    <div class="trail-info">
+                        <h2>合歡東峰</h2>
+                        <p>2,341 人想去 | 4,581 人去過 | 406,533 次點閱<br><br>
+                            玉山主峰位於台灣的中心位置，海拔3952公尺，為台灣群山之首，百岳排名第一，也是東北亞的最高峰。主峰四周有東、南、西、北峰環繞，外圍還有前峰、小南山、南玉山、東小南山、鹿山與北北峰遙相呼應，宛如眾星拱月般，襯托出主峰的王者之尊，壯偉雄奇的山容、絕佳的展望和絢麗的日出景觀，吸引了無數的中外登山客前來攀登，近年來更成為台灣人一生必須完成的三件事之一。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="trail-card" style="background-image: url(img/象山.jpg);">
+                    <div class="trail-info">
+                        <h2>象山步道</h2>
+                        <p>2,341 人想去 | 4,581 人去過 | 406,533 次點閱<br><br>
+                            玉山主峰位於台灣的中心位置，海拔3952公尺，為台灣群山之首，百岳排名第一，也是東北亞的最高峰。主峰四周有東、南、西、北峰環繞，外圍還有前峰、小南山、南玉山、東小南山、鹿山與北北峰遙相呼應，宛如眾星拱月般，襯托出主峰的王者之尊，壯偉雄奇的山容、絕佳的展望和絢麗的日出景觀，吸引了無數的中外登山客前來攀登，近年來更成為台灣人一生必須完成的三件事之一。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <a href="trail.html" class="more-button">MORE</a>
+        </div>
+
+        <div class="trail-bg-decor">
+            <div class="bg-bottom-fill"></div>
+        </div>
+        <div class="slogan-fixed">「山是座標，腳步是紀錄」</div>
+    </section>
+
+
+
+    <!-- News Section -->
+    <div class="news-section">
+        <div class="news-title">
+            <div class="title-bg"></div>
+            <h2>NEWS</h2>
+        </div>
+
+        <div class="green-bg bg1"></div>
+        <div class="green-bg bg2"></div>
+
+        <div class="news-cards-wrapper">
+            <div class="arrow left" onclick="scrollCards(-1)">←</div>
+
+            <div class="news-cards-container" id="cardContainer">
+                <a href="news.html" class="news-card">
+                    <div class="card-img" style="background-image: url(img/新聞1.jpg);"></div>
+                    <div class="card-title">區內道路「宜專一線」7k下邊坡崩塌路基掏空</div>
+                    <div class="card-desc">太平山國家森林遊樂區內道路「宜專一線」7k下邊坡崩塌，導致路基掏空，外側車道路面明顯，同......</div>
+                    <div class="card-footer">
+                        <span>2025/04/30</span><span>👁️ 5,230次點閱</span>
+                    </div>
+                </a>
+
+                <div class="news-divider"></div>
+
+                <a href="news.html" class="news-card">
+                    <div class="card-img" style="background-image: url(img/新聞2.png);"></div>
+                    <div class="card-title">夏天爬山必看：防中暑脫水，6個關鍵注意事項</div>
+                    <div class="card-desc">2025年夏天根據多方氣象預測，很可能再度刷新近十年最炎熱的紀錄。隨著步道即將邁入五月，......</div>
+                    <div class="card-footer">
+                        <span>2025/04/30</span><span>👁️ 3,139次點閱</span>
+                    </div>
+                </a>
+
+                <div class="news-divider"></div>
+
+                <a href="news.html" class="news-card">
+                    <div class="card-img" style="background-image: url(img/新聞3.jpg);"></div>
+                    <div class="card-title">富士山新規上路！登頂費用翻倍、夜間受限</div>
+                    <div class="card-desc">2025年，日本政府將對富士山四大登山路線實施一系列全新規定，從費用調整、夜間限制到裝備審......</div>
+                    <div class="card-footer">
+                        <span>2025/04/30</span><span>👁️ 3,830次點閱</span>
+                    </div>
+                </a>
+
+                <div class="news-divider"></div>
+
+                <a href="news.html" class="news-card">
+                    <div class="card-img" style="background-image: url(img/新聞4.png);"></div>
+                    <div class="card-title">盜伐梨山國有林！查扣盜木6萬多公斤數量驚人</div>
+                    <div class="card-desc">保七總隊第五大隊去年初獲獲通報，有盜伐集團在台中市和平區梨山一帶的國有林地內，以鏈鋸......</div>
+                    <div class="card-footer">
+                        <span>2025/04/30</span><span>👁️ 5,230次點閱</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="arrow right" onclick="scrollCards(1)">→</div>
+        </div>
+    </div>
+
+    <!-- Journal Section -->
+    <div class="journal-section">
+        <div class="marquee-row row1">
+            <div class="journal-marquee-wrapper">
+                <template id="row1-template">
+                    <div class="marquee-item"><img src="img/j/心得030.JPG" alt="photo" /></div>
+                    <div class="marquee-item"><img src="img/j/心得021.JPG" alt="photo" /></div>
+                    <div class="marquee-item"><img src="img/j/心得008.JPG" alt="photo" /></div>
+                    <div class="marquee-item"><img src="img/j/心得023.JPG" alt="photo" /></div>
+                    <div class="marquee-item"><img src="img/j/心得019.JPG" alt="photo" /></div>
+                    <div class="marquee-item green-quote">
+                        <p>"No Wi-Fi in the woods, but you'll find better connections."</p>
+                    </div>
+                    <div class="marquee-item"><img src="img/j/心得026.JPG" alt="photo" /></div>
+                    <div class="marquee-item"><img src="img/j/心得001.JPG" alt="photo" /></div>
+                    <div class="marquee-item"><img src="img/j/心得003.JPG" alt="photo" /></div>
+                </template>
+            </div>
+        </div>
+
+        <div class="marquee-row row2">
+            <div class="journal-marquee-wrapper">
+                <template id="row2-template">
+                    <a href="journal.html" class="marquee-item hover-box">
+                        <img src="img/j/心得009.JPG" alt="心得圖" />
+                        <div class="hover-overlay">
+                            <h3>2025臺北大縱走挑戰-四天八條路線完成!</h3>
+                            <p class="info">登山鱷魚 | 2025-05-19 發表<br>110點閱 | 13喜歡</p>
+                            <p class="desc">這次鱷魚選擇四天走完大縱走，也就是一天走兩段，第一天:第八(難)接七段(易)...</p>
+                        </div>
+                    </a>
+                    <a href="journal.html" class="marquee-item hover-box">
+                        <img src="img/j/心得015.JPG" alt="心得圖" />
+                        <div class="hover-overlay">
+                            <h3>山上的日出美景</h3>
+                            <p class="info">松山卡比獸 | 2025-03-21 發表<br>88點閱 | 7喜歡</p>
+                            <p class="desc">一早四點起床，只為了見這短短十分鐘的火燒雲...</p>
+                        </div>
+                    </a>
+                    <a href="journal.html" class="marquee-item hover-box">
+                        <img src="img/j/心得022.JPG" alt="心得圖" />
+                        <div class="hover-overlay">
+                            <h3>第一次登富士山就上手!</h3>
+                            <p class="info">新店彭于晏 | 2023-08-10 發表<br>190點閱 | 20喜歡</p>
+                            <p class="desc">這次安排了日本五日行，其實主要就是為了要去攀登富士山!好幾年前跟朋友約好了一起...</p>
+                        </div>
+                    </a>
+                    <a href="journal.html" class="marquee-item hover-box">
+                        <img src="img/j/心得025.JPG" alt="心得圖" />
+                        <div class="hover-overlay">
+                            <h3>太平洋屋脊步道 散文</h3>
+                            <p class="info">老山宅 | 2025-06-02 發表<br>38點閱 | 2喜歡</p>
+                            <p class="desc">這兩天跟AI討論修潤PCT日誌的內容，AI還幫我作了一張我在PCT很經典的圖，這是我跟Hops抵達Kearsarge Pass後...</p>
+                        </div>
+                    </a>
+                    <a href="journal.html" class="marquee-item hover-box">
+                        <img src="img/j/心得005.JPG" alt="心得圖" />
+                        <div class="hover-overlay">
+                            <h3>完百之旅～八通關上玉山北峰~</h3>
+                            <p class="info">堂糖 | 2025-01-10 發表<br>115點閱 | 3喜歡</p>
+                            <p class="desc">夜裡忽雨，雨滴從冷杉枝葉落下，滴滴答答的打在帳篷上，幽靜的營地，特別擾人清夢...</p>
+                        </div>
+                    </a>
+                    <a href="journal.html" class="marquee-item hover-box">
+                        <img src="img/j/心得020.JPG" alt="心得圖" />
+                        <div class="hover-overlay">
+                            <h3>山上的日出美景</h3>
+                            <p class="info">小企鵝 | 2025-03-21 發表<br>88點閱 | 7喜歡</p>
+                            <p class="desc">一早四點起床，只為了見這短短十分鐘的火燒雲...</p>
+                        </div>
+                    </a>
+                </template>
+            </div>
+        </div>
+
+        <div class="marquee-row row3">
+            <div class="journal-marquee-wrapper">
+                <template id="row3-template">
+                    <div class="marquee-item"><img src="img/j/心得016.JPG" alt="photo" /></div>
+                    <div class="marquee-item green-quote">
+                        <p>"No Wi-Fi in the woods, but you'll find better connections."</p>
+                    </div>
+                    <div class="marquee-item"><img src="img/j/心得010.JPG" alt="photo" /></div>
+                    <div class="marquee-item"><img src="img/j/心得004.JPG" alt="photo" /></div>
+                    <div class="marquee-item"><img src="img/j/心得024.jpg" alt="photo" /></div>
+                    <div class="marquee-item"><img src="img/j/心得029.jpg" alt="photo" /></div>
+                    <div class="marquee-item"><img src="img/j/心得012.jpg" alt="photo" /></div>
+                    <div class="marquee-item"><img src="img/j/心得028.jpg" alt="photo" /></div>
+                    <div class="marquee-item"><img src="img/j/心得018.jpg" alt="photo" /></div>
+                    <div class="marquee-item"><img src="img/j/心得006.jpg" alt="photo" /></div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+    <!-- Best Sellers Section -->
+    <section class="bestseller-section">
+        <div class="bg-watermark">
+            <div>Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW.</div>
+            <div>Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW.</div>
+            <div>Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW.</div>
+            <div>Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW.</div>
+            <div>Mt. TW. Mt. TW. Mt. TW. Mt. TW. Mt. TW.</div>
+        </div>
+
+        <h2 class="section-title">BEST SELLERS</h2>
+        <div class="sell-title-bg"></div>
+
+        <div class="cards-wrapper">
+            <a href="item.html" class="product-card">
+                <img src="img/商品01.png" alt="backpack" />
+                <div class="card-content">
+                    <div class="left-block">
+                        <div class="product-name">32L 登山健行健行包</div>
+                        <div class="product-desc">Escape NH500</div>
+                        <button class="buy-button">加入購物車</button>
+                    </div>
+                    <div class="right-block">
+                        <div class="tag">登山包</div>
+                        <div class="price">$1,499</div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="item.html" class="product-card">
+                <img src="img/商品01.png" alt="backpack" />
+                <div class="card-content">
+                    <div class="left-block">
+                        <div class="product-name">32L 登山健行健行包</div>
+                        <div class="product-desc">Escape NH500</div>
+                        <button class="buy-button">加入購物車</button>
+                    </div>
+                    <div class="right-block">
+                        <div class="tag">登山包</div>
+                        <div class="price">$1,499</div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="item.html" class="product-card">
+                <img src="img/商品01.png" alt="backpack" />
+                <div class="card-content">
+                    <div class="left-block">
+                        <div class="product-name">32L 登山健行健行包</div>
+                        <div class="product-desc">Escape NH500</div>
+                        <button class="buy-button">加入購物車</button>
+                    </div>
+                    <div class="right-block">
+                        <div class="tag">登山包</div>
+                        <div class="price">$1,499</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <button class="sell-more-button">MORE</button>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-left">
+            <img src="icon/logo.svg" alt="Logo">
+            <div class="footer-text">
+                <h1>Mt. TW</h1>
+                <p>Explore. Record. Connect.</p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <h3>Contact us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Trail section filter functionality
+        document.querySelectorAll('.filter').forEach((filter) => {
+            const summarySpan = filter.querySelector('summary span');
+            const items = filter.querySelectorAll('ul li');
+
+            items.forEach((item) => {
+                item.addEventListener('click', () => {
+                    summarySpan.textContent = item.textContent;
+                    filter.removeAttribute('open');
+                });
+            });
+        });
+
+        // // News section scroll functionality
+        // function scrollCards(direction) {
+        //     const container = document.getElementById("cardContainer");
+        //     const card = container.querySelector('.news-card');
+        //     const divider = container.querySelector('.news-divider');
+
+        //     if (!card || !container) return;
+
+        //     const cardWidth = card.offsetWidth;
+        //     const dividerWidth = divider ? divider.offsetWidth : 0;
+        //     const scrollAmount = cardWidth + dividerWidth + 30;
+
+        //     container.scrollBy({
+        //         left: direction * scrollAmount,
+        //         behavior: 'smooth'
+        //     });
+        // }
+
+        // Journal section template duplication
+        function duplicateRow(rowSelector, templateId, count = 5) {
+            const wrapper = document.querySelector(`${rowSelector} .journal-marquee-wrapper`);
+            const tpl = document.getElementById(templateId);
+            for (let i = 0; i < count; i++) {
+                wrapper.appendChild(tpl.content.cloneNode(true));
+            }
+        }
+        duplicateRow(".row1", "row1-template", 4);
+        duplicateRow(".row2", "row2-template", 7);
+        duplicateRow(".row3", "row3-template", 5);
+    </script>
+</body>
+
+</html>

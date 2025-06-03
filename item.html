@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mt. TW - item</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #EEE7DD;
+        }
+
+        /* Header - 延用原樣式 */
+        header {
+            width: 100%;
+            height: 120px;
+            background-color: #283A29;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .nav-item {
+            position: relative;
+            cursor: pointer;
+            color: #EEE7DD;
+            height: 30px;
+            line-height: 30px;
+            margin-top: 50px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .nav-item.active {
+            color: #E8A520;
+        }
+
+        .nav-item::after {
+            content: attr(data-en);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background-color: #E8A520;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Fugaz One', cursive;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .nav-item:hover::after {
+            opacity: 1;
+        }
+
+        .nav-item.active::after {
+            display: none;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+            transform: scale(0.7);
+            padding-top: 25px;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-wrapper a {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-family: 'Fugaz One', cursive;
+            font-size: 15px;
+            color: #F6EEE0;
+            margin-top: -20px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+            cursor: pointer;
+            transform: translateY(25px);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: #f8f8f8;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .breadcrumb-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .breadcrumb a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .breadcrumb a:hover {
+            color: #E8A520;
+        }
+
+        .breadcrumb span {
+            color: #999;
+            margin: 0 8px;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            gap: 40px;
+        }
+
+        /* Sidebar - 延用原樣式 */
+        .sidebar {
+            width: 250px;
+            flex-shrink: 0;
+        }
+
+        .filter-box {
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .filter-title {
+            font-weight: bold;
+            font-size: 16px;
+            color: #283A29;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #E8A520;
+        }
+
+        .category-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .category-item:hover {
+            color: #E8A520;
+        }
+
+        .category-count {
+            background: #E8A520;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 11px;
+        }
+
+        .brand-item {
+            padding: 6px 0;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .brand-item:hover {
+            color: #E8A520;
+        }
+
+        .price-slider {
+            width: 100%;
+            height: 6px;
+            background: #ddd;
+            border-radius: 3px;
+            outline: none;
+            margin: 15px 0;
+        }
+
+        .price-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Product Detail Area */
+        .product-detail {
+            flex: 1;
+        }
+
+        .product-main {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Product Images */
+        .product-images {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 400px;
+            background: white;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumbnail-images {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            flex-shrink: 0;
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .thumbnail.active {
+            border-color: #E8A520;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Product Info */
+        .product-info {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .product-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #283A29;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .product-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stars {
+            color: #E8A520;
+            font-size: 18px;
+        }
+
+        .rating-info {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .product-price {
+            margin-bottom: 30px;
+        }
+
+        .current-price {
+            font-size: 36px;
+            font-weight: bold;
+            color: #E8A520;
+        }
+
+        .original-price {
+            font-size: 20px;
+            color: #999;
+            text-decoration: line-through;
+            margin-left: 15px;
+        }
+
+        /* Product Options */
+        .product-options {
+            margin-bottom: 30px;
+        }
+
+        .option-group {
+            margin-bottom: 25px;
+        }
+
+        .option-label {
+            font-weight: bold;
+            color: #283A29;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .color-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .color-option {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .color-option.active {
+            border-color: #283A29;
+            transform: scale(1.2);
+        }
+
+        .color-option.green {
+            background: #346135;
+        }
+
+        .color-option.blue {
+            background: #2b6696;
+        }
+
+        .color-option.orange {
+            background: #FF9800;
+        }
+
+        .color-option.black {
+            background: #333;
+        }
+
+        .size-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .size-option {
+            padding: 4px 14px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .size-option.active {
+            border-color: #283A29;
+            background: #283A29;
+            color: white;
+        }
+
+        .size-option:hover {
+            border-color: #E8A520;
+        }
+
+        /* Quantity and Actions */
+        .quantity-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+        }
+
+        .qty-btn {
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .qty-input {
+            width: 60px;
+            height: 40px;
+            border: none;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .add-to-cart {
+            background: #E8A520;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .add-to-cart:hover {
+            background: #d4941c;
+            transform: translateY(-2px);
+        }
+
+        .wishlist-btn {
+            background: white;
+            border: 2px solid #ddd;
+            padding: 12px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #666;
+        }
+
+        .wishlist-btn:hover {
+            border-color: #E8A520;
+            color: #E8A520;
+        }
+
+        /* Product Tabs */
+        .product-tabs {
+            margin-top: 60px;
+        }
+
+        .tab-headers {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 30px;
+        }
+
+        .tab-header {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tab-header.active {
+            color: #283A29;
+            border-bottom-color: #283A29;
+        }
+
+        .tab-content {
+            display: none;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .spec-table th,
+        .spec-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .spec-table th {
+            background: #f8f8f8;
+            font-weight: bold;
+            color: #283A29;
+            width: 30%;
+        }
+
+        /* Related Products */
+        .related-products {
+            margin-top: 80px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #283A29;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-image {
+            width: 100%;
+            height: 200px;
+            background: #f8f8f8;
+        }
+
+        .related-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .related-info {
+            padding: 15px;
+        }
+
+        .related-name {
+            font-weight: bold;
+            color: #283A29;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .related-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #E8A520;
+        }
+
+        /* Footer - 延用原樣式 */
+        .footer {
+            background-color: #283A29;
+            color: #EEE7DD;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 80px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-left a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .footer-left img {
+            width: 80px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .footer-text {
+            font-family: 'Fugaz One';
+        }
+
+        .footer-text h1 {
+            font-size: 32px;
+            margin: 0;
+            color: #EEE7DD;
+        }
+
+        .footer-text p {
+            margin-top: 6px;
+            font-size: 14px;
+            color: #EEE7DD;
+        }
+
+        .footer-right {
+            text-align: left;
+            font-family: 'Fugaz One';
+        }
+
+        .footer-right h3 {
+            color: #E8A520;
+            margin-bottom: 16px;
+            font-size: 22px;
+        }
+
+        .footer-disclaimer {
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .social-icons a {
+            margin-left: 10px;
+            font-size: 24px;
+            color: #E8A520;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .product-main {
+                flex-direction: column;
+            }
+
+            .related-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav">
+            <a href="trail.html" class="nav-item" data-en="trail">找路線</a>
+            <a href="news.html" class="nav-item" data-en="news">山系速報</a>
+            <a href="journal.html" class="nav-item" data-en="journal">山人小誌</a>
+        </div>
+        <div class="logo-wrapper">
+            <a href="Index.html">
+                <img src="icon/logo.svg" alt="logo" class="logo">
+                <div class="logo-text">Mt. TW</div>
+            </a>
+        </div>
+        <div class="nav">
+            <a href="store.html" class="nav-item active" data-en="store">山用選物</a>
+            <a href="login.html" class="nav-item" data-en="member">會員中心</a>
+            <img src="icon/search.png" class="icon" alt="search">
+            <a href="store.html"><img src="icon/cart.png" class="icon" alt="cart"></a>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="Index.html">首頁</a>
+            <span>/</span>
+            <a href="store.html">山用選物</a>
+            <span>/</span>
+            <a href="store.html">登山背包</a>
+            <span>/</span>
+            <span style="color: #283A29;">Arc'teryx Aerios 35L</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Categories -->
+            <div class="filter-box">
+                <h3 class="filter-title">商品分類</h3>
+                <div class="category-item">
+                    <span>登山健行包</span>
+                    <span class="category-count">61</span>
+                </div>
+                <div class="category-item">
+                    <span>登山鞋襪</span>
+                    <span class="category-count">26</span>
+                </div>
+                <div class="category-item">
+                    <span>服飾</span>
+                    <span class="category-count">47</span>
+                </div>
+                <div class="category-item">
+                    <span>裝備/配件</span>
+                    <span class="category-count">28</span>
+                </div>
+                <div class="category-item">
+                    <span>其他</span>
+                    <span class="category-count">8</span>
+                </div>
+            </div>
+
+            <!-- Brands -->
+            <div class="filter-box">
+                <h3 class="filter-title">品牌分類</h3>
+                <div class="brand-item">Icebreaker</div>
+                <div class="brand-item">LOWA</div>
+                <div class="brand-item">MONTURA</div>
+                <div class="brand-item">BUFF</div>
+                <div class="brand-item">Sunday Afternoons</div>
+                <div class="brand-item">CAMELBAK</div>
+                <div class="brand-item">Stubble & Co</div>
+                <div class="brand-item">其他</div>
+            </div>
+
+            <!-- Price -->
+            <div class="filter-box">
+                <h3 class="filter-title">價格</h3>
+                <input type="range" min="0" max="12000" value="6000" class="price-slider">
+                <div class="price-labels">
+                    <span>$0</span>
+                    <span>$12000</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Detail -->
+        <div class="product-detail">
+            <div class="product-main">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="img/bag/登山包004.jpg" alt="Arc'teryx Aerios 35L" id="mainImage">
+                    </div>
+                    <div class="thumbnail-images">
+                        <div class="thumbnail active" onclick="changeImage(this, 'img/bag/登山包001.jpg')">
+                            <img src="img/bag/登山包001.jpg" alt="正面">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage(this, 'img/bag/登山包002.jpg')">
+                            <img src="img/bag/登山包002.jpg" alt="側面">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage(this, 'img/bag/登山包012.jpg')">
+                            <img src="img/bag/登山包012.jpg" alt="背面">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage(this, 'img/bag/登山包004.jpg')">
+                            <img src="img/bag/登山包004.jpg" alt="細節">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h1 class="product-title">32L 登山健行背包 Escape NH500</h1>
+                    <p class="product-subtitle">型號：X000009588 | 品牌：Arc'teryx</p>
+
+                    <div class="product-rating">
+                        <div class="stars">★★★★★</div>
+                        <span class="rating-info">4.8 (127 則評價)</span>
+                    </div>
+
+                    <div class="product-price">
+                        <span class="current-price">$3,900</span>
+                        <span class="original-price">$4,900</span>
+                    </div>
+
+                    <!-- Product Options -->
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label class="option-label">顏色選擇</label>
+                            <div class="color-options">
+                                <div class="color-option green active" onclick="selectColor(this)"></div>
+                                <div class="color-option blue" onclick="selectColor(this)"></div>
+                                <div class="color-option orange" onclick="selectColor(this)"></div>
+                                <div class="color-option black" onclick="selectColor(this)"></div>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label class="option-label">尺寸選擇</label>
+                            <div class="size-options">
+                                <div class="size-option" onclick="selectSize(this)">30L</div>
+                                <div class="size-option active" onclick="selectSize(this)">35L</div>
+                                <div class="size-option" onclick="selectSize(this)">40L</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quantity and Actions -->
+                    <div class="quantity-actions">
+                        <div class="quantity-selector">
+                            <button class="qty-btn" onclick="changeQuantity(-1)">−</button>
+                            <input type="number" class="qty-input" value="1" min="1" id="quantity">
+                            <button class="qty-btn" onclick="changeQuantity(1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart()">
+                            <i class="fas fa-shopping-cart"></i>
+                            加入購物車
+                        </button>
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <div class="tab-headers">
+                    <div class="tab-header active" onclick="switchTab(this, 'description')">商品描述</div>
+                    <div class="tab-header" onclick="switchTab(this, 'specs')">規格資訊</div>
+                    <div class="tab-header" onclick="switchTab(this, 'reviews')">顧客評價</div>
+                    <div class="tab-header" onclick="switchTab(this, 'shipping')">配送資訊</div>
+                </div>
+
+                <div class="tab-content active" id="description">
+                    <h3>商品描述</h3>
+                    <p>Arc'teryx Aerios 35L 是一款專為現代登山者設計的輕量化背包。採用高品質的 Hadron™ 防撕裂尼龍布料，兼具輕量與耐用性。</p>
+                    <br>
+                    <p>背包採用 GridLock™ 拉鍊設計，提供快速且安全的開關體驗。內部配置了多個隔層，包括筆記型電腦專用夾層、水瓶側袋等，讓您的裝備井然有序。</p>
+                    <br>
+                    <p>背部採用 ReActiv™ 透氣系統，即使在長時間行走中也能保持背部乾爽舒適。可調節的胸帶和腰帶設計，確保背包與身體完美貼合。</p>
+                </div>
+
+                <div class="tab-content" id="specs">
+                    <h3>規格資訊</h3>
+                    <table class="spec-table">
+                        <tr>
+                            <th>容量</th>
+                            <td>35 公升</td>
+                        </tr>
+                        <tr>
+                            <th>重量</th>
+                            <td>1.2 kg</td>
+                        </tr>
+                        <tr>
+                            <th>尺寸</th>
+                            <td>55 x 35 x 20 cm</td>
+                        </tr>
+                        <tr>
+                            <th>材質</th>
+                            <td>Hadron™ 防撕裂尼龍</td>
+                        </tr>
+                        <tr>
+                            <th>防水等級</th>
+                            <td>DWR 防潑水處理</td>
+                        </tr>
+                        <tr>
+                            <th>產地</th>
+                            <td>加拿大</td>
+                        </tr>
+                        <tr>
+                            <th>保固</th>
+                            <td>3年保固</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="tab-content" id="reviews">
+                    <h3>顧客評價</h3>
+                    <div class="review-summary">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                            <span style="font-size: 24px; font-weight: bold; color: #E8A520;">4.8</span>
+                            <div class="stars" style="font-size: 20px;">★★★★★</div>
+                            <span style="color: #666;">基於 127 則評價</span>
+                        </div>
+                    </div>
+
+                    <div class="review-item" style="border-bottom: 1px solid #eee; padding: 20px 0;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <strong>王小明</strong>
+                            <span style="color: #666; font-size: 14px;">2024/05/15</span>
+                        </div>
+                        <div class="stars" style="margin-bottom: 10px;">★★★★★</div>
+                        <p style="color: #555; line-height: 1.6;">非常棒的背包！材質輕量但很堅固，背起來很舒適。最近帶去爬雪山，表現非常好。推薦給所有登山愛好者！</p>
+                    </div>
+
+                    <div class="review-item" style="border-bottom: 1px solid #eee; padding: 20px 0;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <strong>李美惠</strong>
+                            <span style="color: #666; font-size: 14px;">2024/05/10</span>
+                        </div>
+                        <div class="stars" style="margin-bottom: 10px;">★★★★☆</div>
+                        <p style="color: #555; line-height: 1.6;">質感很好，容量也夠用。只是價格稍微高了一點，但整體來說還是值得購買的。</p>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="shipping">
+                    <h3>配送資訊</h3>
+                    <div style="line-height: 1.8;">
+                        <h4 style="color: #283A29; margin-bottom: 15px;">配送方式</h4>
+                        <p>• 宅配到府：全台灣本島免運費（離島另計）</p>
+                        <p>• 超商取貨：7-11、全家、萊爾富皆可取貨</p>
+                        <p>• 門市自取：歡迎至各門市自取</p>
+                        <br>
+
+                        <h4 style="color: #283A29; margin-bottom: 15px;">配送時間</h4>
+                        <p>• 一般商品：1-3 個工作天</p>
+                        <p>• 預購商品：7-14 個工作天</p>
+                        <p>• 客製化商品：14-21 個工作天</p>
+                        <br>
+
+                        <h4 style="color: #283A29; margin-bottom: 15px;">退換貨政策</h4>
+                        <p>• 商品到貨 7 天內可申請退換貨</p>
+                        <p>• 商品須保持全新狀態及完整包裝</p>
+                        <p>• 客製化商品恕不接受退換貨</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products">
+                <h2 class="section-title">相關商品推薦</h2>
+                <div class="related-grid">
+                    <div class="related-card" onclick="window.location.href='item.html'">
+                        <div class="related-image">
+                            <img src="img/bag/登山包011.jpg" alt="登山背包">
+                        </div>
+                        <div class="related-info">
+                            <div class="related-name">50L 登山健行背包</div>
+                            <div class="related-price">$4,999</div>
+                        </div>
+                    </div>
+
+                    <div class="related-card" onclick="window.location.href='item.html'">
+                        <div class="related-image">
+                            <img src="img/bag/登山包010.jpg" alt="登山背包">
+                        </div>
+                        <div class="related-info">
+                            <div class="related-name">25L 輕量攻頂包</div>
+                            <div class="related-price">$1,899</div>
+                        </div>
+                    </div>
+
+                    <div class="related-card" onclick="window.location.href='item.html'">
+                        <div class="related-image">
+                            <img src="img/bag/登山包009.jpg" alt="登山背包">
+                        </div>
+                        <div class="related-info">
+                            <div class="related-name">20L 多日登山包</div>
+                            <div class="related-price">$2,599</div>
+                        </div>
+                    </div>
+
+                    <div class="related-card" onclick="window.location.href='item.html'">
+                        <div class="related-image">
+                            <img src="img/bag/登山包007.jpg" alt="登山背包">
+                        </div>
+                        <div class="related-info">
+                            <div class="related-name">40L 重裝背包</div>
+                            <div class="related-price">$6,299</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="Index.html">
+                    <img src="icon/logo.svg" alt="Logo">
+                    <div class="footer-text">
+                        <h1>Mt. TW</h1>
+                        <p>Explore. Record. Connect.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="footer-right">
+                <h3>Contact us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-disclaimer">
+            本網站為緯育TibaMe_前端設計工程師班學員專題成果作品，本平台僅供學習、展示之用。
+        </div>
+    </footer>
+
+    <script>
+        // 切換主圖片
+        function changeImage(thumbnail, imageSrc) {
+            document.getElementById('mainImage').src = imageSrc;
+
+            // 更新縮圖active狀態
+            var thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(function (thumb) {
+                thumb.classList.remove('active');
+            });
+            thumbnail.classList.add('active');
+        }
+
+        // 選擇顏色
+        function selectColor(colorOption) {
+            var colorOptions = document.querySelectorAll('.color-option');
+            colorOptions.forEach(function (option) {
+                option.classList.remove('active');
+            });
+            colorOption.classList.add('active');
+        }
+
+        // 選擇尺寸
+        function selectSize(sizeOption) {
+            var sizeOptions = document.querySelectorAll('.size-option');
+            sizeOptions.forEach(function (option) {
+                option.classList.remove('active');
+            });
+            sizeOption.classList.add('active');
+        }
+
+        // 數量變更
+        function changeQuantity(change) {
+            var quantityInput = document.getElementById('quantity');
+            var currentValue = parseInt(quantityInput.value);
+            var newValue = currentValue + change;
+
+            if (newValue >= 1) {
+                quantityInput.value = newValue;
+            }
+        }
+
+        // 加入購物車
+        function addToCart() {
+            var button = document.querySelector('.add-to-cart');
+            var originalText = button.innerHTML;
+
+            button.innerHTML = '<i class="fas fa-check"></i> 已加入購物車';
+            button.style.background = '#4CAF50';
+
+            setTimeout(function () {
+                button.innerHTML = originalText;
+                button.style.background = '#E8A520';
+            }, 2000);
+        }
+
+        // 收藏切換
+        function toggleWishlist(button) {
+            var icon = button.querySelector('i');
+            if (icon.classList.contains('far')) {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                button.style.borderColor = '#E8A520';
+                button.style.color = '#E8A520';
+            } else {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+                button.style.borderColor = '#ddd';
+                button.style.color = '#666';
+            }
+        }
+
+        // 切換分頁
+        function switchTab(header, tabId) {
+            // 移除所有active class
+            var headers = document.querySelectorAll('.tab-header');
+            var contents = document.querySelectorAll('.tab-content');
+
+            headers.forEach(function (h) {
+                h.classList.remove('active');
+            });
+            contents.forEach(function (c) {
+                c.classList.remove('active');
+            });
+
+            // 加入新的active class
+            header.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // 側邊欄篩選項目
+        function toggleFilter(item) {
+            if (item.style.color === 'rgb(232, 165, 32)') {
+                item.style.color = '';
+            } else {
+                item.style.color = '#E8A520';
+            }
+        }
+
+        // 綁定事件
+        document.addEventListener('DOMContentLoaded', function () {
+            // 篩選項目
+            var categoryItems = document.querySelectorAll('.category-item, .brand-item');
+            categoryItems.forEach(function (item) {
+                item.onclick = function () {
+                    toggleFilter(this);
+                };
+            });
+        });
+    </script>
+
+</body>
+
+</html>
