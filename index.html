@@ -1425,24 +1425,6 @@
             });
         });
 
-        // // News section scroll functionality
-        // function scrollCards(direction) {
-        //     const container = document.getElementById("cardContainer");
-        //     const card = container.querySelector('.news-card');
-        //     const divider = container.querySelector('.news-divider');
-
-        //     if (!card || !container) return;
-
-        //     const cardWidth = card.offsetWidth;
-        //     const dividerWidth = divider ? divider.offsetWidth : 0;
-        //     const scrollAmount = cardWidth + dividerWidth + 30;
-
-        //     container.scrollBy({
-        //         left: direction * scrollAmount,
-        //         behavior: 'smooth'
-        //     });
-        // }
-
         // Journal section template duplication
         function duplicateRow(rowSelector, templateId, count = 5) {
             const wrapper = document.querySelector(`${rowSelector} .journal-marquee-wrapper`);
