@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mt. TW - trail</title>
+    <!-- Meyer's CSS Reset -->
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
     <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* 重建被reset影響的基礎樣式 */
         * {
             margin: 0;
             padding: 0;
@@ -17,6 +20,54 @@
         body {
             font-family: sans-serif;
             background-color: #F6EEE0;
+            line-height: 1.4;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: 0.67em 0;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin: 0.83em 0;
+        }
+
+        h3 {
+            font-size: 1.17em;
+            margin: 1em 0;
+        }
+
+        strong, b {
+            font-weight: bold;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        input, textarea, select {
+            font-family: inherit;
+            font-size: inherit;
+            padding: 4px;
+            border: 1px solid #ccc;
         }
 
         /* Header */
@@ -176,6 +227,7 @@
         }
 
         .filter-section::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;

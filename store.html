@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mt. TW - store</title>
+    <!-- Meyer's CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -129,13 +131,9 @@
             position: relative;
             width: 90%;
             height: 90%;
-            /* max-width: 1400px; */
-            /* 限制最大寬度 */
             border-radius: 25px;
-            /* 圓角 */
             overflow: hidden;
             box-shadow: 3px 3px 0px rgba(232, 162, 32, 0.979);
-            /* 陰影效果 */
             z-index: 2;
         }
 
@@ -146,7 +144,6 @@
             width: 100%;
             height: 100%;
             background: url(img/banner_store.png) center center / cover no-repeat;
-            /* opacity: 0.3; */
             z-index: 1;
         }
 
@@ -284,10 +281,7 @@
 
         /* 新的卡片樣式 */
         .product-card {
-            /* background: white; */
-            /* border-radius: 20px; */
             overflow: hidden;
-            /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             display: flex;
@@ -435,7 +429,6 @@
             font-size: 26px;
             font-weight: bold;
             color: #E8A520;
-            /* font-family: 'Fugaz One'; */
         }
 
         /* 小購物車按鈕 */
@@ -1087,5 +1080,6 @@
             }
             btn.classList.add('active');
         }
-
-        //
+        </script>
+    </body>
+</html>
