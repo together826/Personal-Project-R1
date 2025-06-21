@@ -294,7 +294,7 @@ header {
 }
 
 /* 首頁footer特殊樣式 */
-.footer-index {
+/* .footer-index {
     justify-content: space-between;
     height: 270px;
 }
@@ -305,7 +305,7 @@ header {
 
 .footer-index .footer-right {
     margin-right: 364px;
-}
+} */
 
 /* 其他頁面footer樣式 */
 .footer-default {
