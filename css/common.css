@@ -350,7 +350,7 @@ header {
 }
 
 /* 首頁footer文字顏色 */
-.footer-index .footer-text h1 {
+/* .footer-index .footer-text h1 {
     color: #F6EEE1;
 }
 
@@ -381,7 +381,7 @@ header {
 
 .social-icons a:hover {
     transform: scale(1.2);
-}
+} */
 
 /* Footer免責聲明 */
 .footer-disclaimer {
