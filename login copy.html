@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mt. TW - login</title>
+    <!-- Meyer's CSS Reset -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 重建被reset影響的基礎樣式 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #F6EEE0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.4;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: 0.67em 0;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin: 0.83em 0;
+        }
+
+        h3 {
+            font-size: 1.17em;
+            margin: 1em 0;
+        }
+
+        strong, b {
+            font-weight: bold;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        input, textarea, select {
+            font-family: inherit;
+            font-size: inherit;
+            padding: 4px;
+            border: 1px solid #ccc;
+        }
+
+        /* Header Styles - 延用原本的設計 */
+        header {
+            width: 100%;
+            height: 160px;
+            background-color: #334B35;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            font-size: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-item {
+            position: relative;
+            cursor: pointer;
+            color: #F6EEE0;
+            transition: all 0.3s ease;
+            height: 50px;
+            line-height: 30px;
+            margin-top: 70px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .nav-item.active {
+            color: #E8A520;
+        }
+
+        .nav-item::after {
+            content: attr(data-en);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background-color: #E8A520;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Fugaz One', cursive;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .nav-item:hover::after {
+            opacity: 1;
+        }
+
+        .nav-item.active::after {
+            display: none;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+            scale: 70%;
+            padding-top: 30px;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 0px;
+        }
+
+        .logo-wrapper a {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-family: 'Fugaz One', cursive;
+            font-size: 15px;
+            color: #F6EEE0;
+            margin-top: -20px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+            cursor: pointer;
+            transform: translateY(28px);
+            margin-top: -5px;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background Pattern */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .bg-pattern div {
+            position: absolute;
+            font-family: "Fugaz One", cursive;
+            font-size: 120px;
+            font-weight: 400;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(51, 75, 53, 0.15);
+            white-space: nowrap;
+            animation: scroll-horizontal 200s linear infinite;
+        }
+
+        .bg-pattern div:nth-child(1) {
+            top: 50px;
+            animation-delay: 0s;
+        }
+
+        .bg-pattern div:nth-child(2) {
+            top: 200px;
+            animation-delay: -50s;
+            animation-direction: reverse;
+        }
+
+        .bg-pattern div:nth-child(3) {
+            top: 350px;
+            animation-delay: -100s;
+        }
+
+        .bg-pattern div:nth-child(4) {
+            top: 500px;
+            animation-delay: -150s;
+            animation-direction: reverse;
+        }
+
+        .bg-pattern div:nth-child(5) {
+            top: 650px;
+            animation-delay: -200s;
+        }
+
+        .bg-pattern div:nth-child(6) {
+            top: 800px;
+            animation-delay: -250s;
+            animation-direction: reverse;
+        }
+
+        @keyframes scroll-horizontal {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Login Container */
+        .login-container {
+            background: #283A29;
+            border-radius: 40px;
+            padding: 60px 50px;
+            box-shadow: 8px 8px 0px #E8A520;
+            width: 100%;
+            max-width: 480px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .login-title {
+            font-family: sans-serif;
+            font-size: 25px;
+            color: #E8A520;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            color: #F6EEE0;
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            background-color: #F6EEE0;
+            color: #283A29;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(232, 165, 32, 0.3);
+            transform: scale(1.02);
+        }
+
+        .form-input::placeholder {
+            color: #888;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #666;
+            font-size: 18px;
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            color: #F6EEE0;
+            cursor: pointer;
+        }
+
+        .remember-me input {
+            margin-right: 8px;
+            transform: scale(1.2);
+        }
+
+        .forgot-password {
+            color: #E8A520;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-password:hover {
+            color: #F6EEE0;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #E8A520 0%, #F5B942 100%);
+            color: #283A29;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Fugaz One', cursive;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: sans-serif;
+        }
+
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(232, 165, 32, 0.3);
+        }
+
+        .login-button:active {
+            transform: translateY(0);
+        }
+
+        .divider {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            color: #F6EEE0;
+            font-size: 14px;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(246, 238, 224, 0.3);
+        }
+
+        .divider span {
+            background: #283A29;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .social-login {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .social-button {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #F6EEE0;
+            background: transparent;
+            color: #F6EEE0;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .social-button:hover {
+            background: #F6EEE0;
+            color: #283A29;
+        }
+
+        .register-link {
+            text-align: center;
+            color: #F6EEE0;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #E8A520;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Footer Styles - 延用原本的設計 */
+        .footer {
+            background-color: #283A29;
+            color: #EEE7DD;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 80px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-left a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .footer-left img {
+            width: 80px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .footer-text {
+            font-family: 'Fugaz One';
+        }
+
+        .footer-text h1 {
+            font-size: 32px;
+            margin: 0;
+            color: #F6EEE1;
+        }
+
+        .footer-text p {
+            margin-top: 6px;
+            font-size: 14px;
+            color: #EEE7DD;
+        }
+
+        .footer-right {
+            text-align: left;
+            font-family: 'Fugaz One';
+        }
+
+        .footer-right h3 {
+            color: #E8A520;
+            margin-bottom: 16px;
+            font-size: 22px;
+        }
+
+        .footer-disclaimer {
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .social-icons a {
+            margin-left: 10px;
+            font-size: 24px;
+            color: #E8A520;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 40px 15px;
+            }
+
+            .login-container {
+                padding: 40px 30px;
+                margin: 0 15px;
+            }
+
+            .login-title {
+                font-size: 28px;
+            }
+
+            .nav {
+                gap: 30px;
+            }
+
+            .footer {
+                flex-direction: column;
+                height: auto;
+                padding: 30px 20px;
+                text-align: center;
+            }
+
+            .footer-left {
+                margin-left: 0;
+                margin-bottom: 20px;
+            }
+
+            .footer-right {
+                margin-right: 0;
+            }
+
+            .social-login {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                border-radius: 20px;
+                padding: 30px 20px;
+            }
+
+            .form-input {
+                padding: 12px 15px;
+            }
+
+            .login-button {
+                padding: 12px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav">
+            <a href="trail.html" class="nav-item" data-en="trail">找路線</a>
+            <a href="news.html" class="nav-item" data-en="news">山系速報</a>
+            <a href="journal.html" class="nav-item" data-en="journal">山人小誌</a>
+        </div>
+        <div class="logo-wrapper">
+            <a href="index.html">
+                <img src="icon/logo.svg" alt="logo" class="logo">
+                <div class="logo-text">Mt. TW</div>
+            </a>
+        </div>
+        <div class="nav">
+            <a href="store.html" class="nav-item" data-en="store">山用選物</a>
+            <a href="login.html" class="nav-item active" data-en="member">會員中心</a>
+            <img src="https://www.svgrepo.com/show/532555/search.svg" class="icon" alt="search">
+            <a href="store.html"><img src="icon/cart.png" class="icon" alt="cart"></a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Login Form -->
+        <div class="login-container">
+            <h1 class="login-title">會員登入</h1>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email" class="form-label">電子信箱</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="請輸入您的電子信箱" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">密碼</label>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" class="form-input" placeholder="請輸入您的密碼"
+                            required>
+                        <i class="fas fa-eye password-toggle" id="togglePassword"></i>
+                    </div>
+                </div>
+
+                <div class="remember-forgot">
+                    <a href="#" class="forgot-password">忘記密碼？</a>
+                </div>
+
+                <button type="submit" class="login-button">登入</button>
+            </form>
+
+            <div class="divider">
+                <span>或</span>
+            </div>
+
+            <div class="social-login">
+                <button class="social-button" type="button">
+                    <i class="fab fa-google"></i>
+                    Google
+                </button>
+                <button class="social-button" type="button">
+                    <i class="fab fa-facebook-f"></i>
+                    Facebook
+                </button>
+            </div>
+
+            <div class="register-link">
+                還沒有帳號？ <a href="login.html">立即註冊</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Background Pattern -->
+    <div class="bg-pattern">
+        <div>Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW
+        </div>
+        <div>Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW
+        </div>
+        <div>Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW
+        </div>
+        <div>Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW
+        </div>
+        <div>Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW
+        </div>
+        <div>Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW Mt. TW
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="index.html">
+                    <img src="icon/logo.svg" alt="Logo">
+                    <div class="footer-text">
+                        <h1>Mt. TW</h1>
+                        <p>Explore. Record. Connect.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="footer-right">
+                <h3>Contact us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-disclaimer">
+            本網站為緯育TibaMe_前端設計工程師班學員專題成果作品，本平台僅供學習、展示之用。
+        </div>
+    </footer>
+</body>
+
+</html>

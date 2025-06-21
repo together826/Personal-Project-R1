@@ -1,0 +1,554 @@
+/* ==========================================================================
+   Mt. TW 網站共用樣式表
+   ========================================================================== */
+
+/* 基礎重設樣式 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.4;
+}
+
+/* 標題樣式 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 0.83em 0;
+}
+
+h3 {
+    font-size: 1.17em;
+    margin: 1em 0;
+}
+
+h4 {
+    font-size: 1em;
+    margin: 1.33em 0;
+}
+
+/* 文字樣式 */
+strong,
+b {
+    font-weight: bold;
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* 表單元素 */
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 4px;
+    border: 1px solid #ccc;
+}
+
+/* 表格樣式 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 4px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   Header 共用樣式
+   ========================================================================== */
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    font-size: 16px;
+    position: relative;
+}
+
+/* 首頁特殊header樣式 */
+.header-index {
+    height: 80px;
+    background-color: #334B35;
+    z-index: 2;
+}
+
+/* 其他頁面header樣式 */
+.header-default {
+    height: 120px;
+    background-color: #283A29;
+}
+
+/* 登入頁面特殊header樣式 */
+.header-login {
+    height: 160px;
+    background-color: #334B35;
+    z-index: 2;
+}
+
+/* 導航項目 */
+.nav-item {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #F6EEE0;
+    /* 預設顏色 */
+}
+
+/* 首頁導航樣式 */
+.header-index .nav-item {
+    margin-top: 50px;
+    color: #F6EEE0;
+}
+
+/* 其他頁面導航樣式 */
+.header-default .nav-item {
+    margin-top: 50px;
+    color: #EEE7DD;
+}
+
+/* 登入頁面導航樣式 */
+.header-login .nav-item {
+    margin-top: 70px;
+    color: #F6EEE0;
+}
+
+/* 啟動狀態 */
+.nav-item.active {
+    color: #E8A520;
+}
+
+/* Hover效果 */
+.nav-item::after {
+    content: attr(data-en);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #E8A520;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Fugaz One', cursive;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.nav-item:hover::after {
+    opacity: 1;
+}
+
+.nav-item.active::after {
+    display: none;
+}
+
+/* Logo區域 */
+.logo {
+    width: 80px;
+    height: auto;
+    transform: scale(0.7);
+}
+
+/* 首頁logo特殊樣式 */
+.header-index .logo {
+    padding-top: 25px;
+}
+
+/* 其他頁面logo樣式 */
+.header-default .logo {
+    padding-top: 25px;
+}
+
+/* 登入頁面logo樣式 */
+.header-login .logo {
+    padding-top: 30px;
+    scale: 70%;
+}
+
+.logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-wrapper a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-text {
+    font-family: 'Fugaz One', cursive;
+    font-size: 15px;
+    color: #F6EEE0;
+}
+
+/* 首頁logo文字樣式 */
+.header-index .logo-text {
+    margin-top: -15px;
+}
+
+/* 其他頁面logo文字樣式 */
+.header-default .logo-text {
+    margin-top: -15px;
+}
+
+/* 登入頁面logo文字樣式 */
+.header-login .logo-text {
+    margin-top: -20px;
+}
+
+/* 導航容器 */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* 圖標樣式 */
+.icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+    cursor: pointer;
+}
+
+/* 首頁圖標樣式 */
+.header-index .icon {
+    transform: translateY(25px);
+}
+
+/* 其他頁面圖標樣式 */
+.header-default .icon {
+    transform: translateY(25px);
+}
+
+/* 登入頁面圖標樣式 */
+.header-login .icon {
+    transform: translateY(28px);
+    margin-top: -5px;
+}
+
+/* ==========================================================================
+   Footer 共用樣式
+   ========================================================================== */
+
+.footer {
+    background-color: #283A29;
+    color: #EEE7DD;
+    display: flex;
+    align-items: center;
+    padding: 40px 80px;
+    margin-top: auto;
+}
+
+/* 首頁footer特殊樣式 */
+.footer-index {
+    justify-content: space-between;
+    height: 270px;
+}
+
+.footer-index .footer-left {
+    margin-left: 365px;
+}
+
+.footer-index .footer-right {
+    margin-right: 364px;
+}
+
+/* 其他頁面footer樣式 */
+.footer-default {
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-left a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.footer-left img {
+    width: 80px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.footer-text {
+    font-family: 'Fugaz One';
+}
+
+.footer-text h1 {
+    font-size: 32px;
+    margin: 0;
+    color: #EEE7DD;
+}
+
+/* 首頁footer文字顏色 */
+.footer-index .footer-text h1 {
+    color: #F6EEE1;
+}
+
+.footer-text p {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #EEE7DD;
+}
+
+.footer-right {
+    text-align: left;
+    font-family: 'Fugaz One';
+}
+
+.footer-right h3 {
+    color: #E8A520;
+    margin-bottom: 16px;
+    font-size: 22px;
+}
+
+.social-icons a {
+    margin-left: 10px;
+    font-size: 24px;
+    color: #E8A520;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* Footer免責聲明 */
+.footer-disclaimer {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* ==========================================================================
+   Banner 共用樣式
+   ========================================================================== */
+
+.banner {
+    background: linear-gradient(135deg, #283A29 0%, #283A29 100%);
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-image-container {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 3px 3px 0px rgba(232, 162, 32, 0.979);
+    z-index: 2;
+}
+
+.banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Fugaz One', cursive;
+    font-size: 48px;
+    color: #ffffff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+/* ==========================================================================
+   通用容器
+   ========================================================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 商店頁面特殊容器 */
+.container-store {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    gap: 40px;
+}
+
+/* ==========================================================================
+   通用按鈕樣式
+   ========================================================================== */
+
+.btn-primary {
+    background: #E8A520;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: #d4941c;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background: #334B35;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background: #E8A520;
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   響應式設計
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    .container-store {
+        flex-direction: column;
+        padding: 20px 15px;
+    }
+
+    .nav {
+        gap: 30px;
+    }
+
+    .footer {
+        flex-direction: column;
+        height: auto;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .footer-index {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .footer-index .footer-left,
+    .footer-index .footer-right {
+        margin: 0;
+    }
+
+    .footer-left {
+        margin-bottom: 20px;
+    }
+
+    .banner-title {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-title {
+        font-size: 28px;
+    }
+}
