@@ -564,41 +564,14 @@ Mt. TW 響應式設計樣式表 - 包含固定Header
         margin-bottom: 25px;
     }
 
-    .bestseller-cards-wrapper {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        max-width: 1380px;
-        margin: 0 auto;
-    }
-
-    .bestseller-arrow {
-        font-size: 28px;
-        cursor: pointer;
-        user-select: none;
-        opacity: 0.7;
-        color: #000;
-        display: block;
-    }
-
-    .bestseller-cards-wrapper {
-        gap: 15px;
-    }
-
-    .bestseller-arrow {
-        font-size: 24px;
-        display: block;
-    }
-
     .cards-wrapper {
         display: flex;
         gap: 20px;
+        justify-content: center;
+        padding: 0 20px;
+        flex-wrap: nowrap;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        padding: 0 20px 20px;
         scrollbar-width: none;
         -ms-overflow-style: none;
         scroll-behavior: smooth;
@@ -608,29 +581,103 @@ Mt. TW 響應式設計樣式表 - 包含固定Header
         display: none;
     }
 
+    /* 在平板模式下只顯示前兩張卡片 */
+    .product-card:nth-child(n+3) {
+        display: none;
+    }
+
     .product-card {
+        background-color: #3C6C44;
         width: 280px;
-        height: 260px;
+        height: 300px;
+        border-radius: 25px;
+        padding: 15px;
+        color: white;
+        text-align: center;
+        position: relative;
+        transition: transform 0.5s ease;
+        cursor: pointer;
+        text-decoration: none;
         flex-shrink: 0;
-        scroll-snap-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .product-card:hover {
+        transform: scale(1.05);
     }
 
     .product-card img {
-        width: 160px;
-        margin-top: -40px;
+        width: 140px;
+        height: auto;
+        margin-top: 5px;
+        z-index: 2;
+        flex-shrink: 0;
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        width: 100%;
+        margin-top: 15px;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .left-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        width: 100%;
+        order: 1;
+    }
+
+    .right-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        width: 100%;
+        order: 2;
     }
 
     .product-name {
-        font-size: 16px;
+        font-size: 16px !important;
+        margin-top: 0 !important;
+        text-align: center;
+        line-height: 1.2;
+        color: white !important;
     }
 
     .product-desc {
-        font-size: 14px;
+        font-size: 14px !important;
+        margin-top: 2px !important;
+        text-align: center;
+        color: white !important;
+    }
+
+    /* 隱藏tag */
+    .tag {
+        display: none !important;
     }
 
     .price {
-        font-size: 24px;
-        margin-top: 30px;
+        font-size: 24px !important;
+        color: #E8A520 !important;
+        font-weight: bold !important;
+        margin-top: 8px !important;
+        text-align: center !important;
+        display: block !important;
+    }
+
+    /* 隱藏加入購物車按鈕 */
+    .buy-button {
+        display: none;
     }
 
     /* Footer調整 */
@@ -973,55 +1020,126 @@ Mt. TW 響應式設計樣式表 - 包含固定Header
     }
 
     .cards-wrapper {
-        gap: 15px;
-        padding: 0 15px 15px;
         display: flex;
+        gap: 10px;
+        justify-content: center;
+        padding: 0 10px;
+        flex-wrap: nowrap;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         scrollbar-width: none;
         -ms-overflow-style: none;
+        scroll-behavior: smooth;
     }
 
     .cards-wrapper::-webkit-scrollbar {
         display: none;
     }
 
+    /* 在手機模式下只顯示前兩張卡片 */
+    .product-card:nth-child(n+3) {
+        display: none;
+    }
+
     .product-card {
-        width: 240px;
-        height: 220px;
+        background-color: #3C6C44;
+        width: 180px;
+        height: 240px;
+        border-radius: 20px;
+        padding: 10px;
+        color: white;
+        text-align: center;
+        position: relative;
+        transition: transform 0.5s ease;
+        cursor: pointer;
+        text-decoration: none;
         flex-shrink: 0;
         scroll-snap-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .product-card:hover {
+        transform: scale(1.05);
     }
 
     .product-card img {
-        width: 140px;
-        margin-top: -30px;
+        width: 110px;
+        height: auto;
+        margin-top: 5px;
+        z-index: 2;
+        flex-shrink: 0;
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        width: 100%;
+        margin-top: 10px;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .left-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        width: 100%;
+        order: 1;
+    }
+
+    .right-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        width: 100%;
+        order: 2;
     }
 
     .product-name {
-        font-size: 14px;
-        margin-top: 8px;
+        font-size: 12px !important;
+        margin-top: 0 !important;
+        line-height: 1.2;
+        text-align: center;
+        color: white !important;
     }
 
     .product-desc {
-        font-size: 12px;
+        font-size: 10px !important;
+        margin-top: 2px !important;
+        text-align: center;
+        color: white !important;
+    }
+
+    /* 隱藏tag */
+    .tag {
+        display: none !important;
     }
 
     .price {
-        font-size: 20px;
-        margin-top: 20px;
+        font-size: 18px !important;
+        color: #E8A520 !important;
+        font-weight: bold !important;
+        margin-top: 6px !important;
+        text-align: center !important;
+        display: block !important;
     }
 
+    /* 隱藏加入購物車按鈕 */
     .buy-button {
-        font-size: 12px;
-        padding: 4px 10px;
-        margin-top: 15px;
+        display: none;
     }
 
     .sell-more-button {
         font-size: 18px;
-        padding: 6px 20px;
-        margin-top: 20px;
+        padding: 8px 20px;
+        margin-top: 30px;
     }
 
     /* Footer調整 */
