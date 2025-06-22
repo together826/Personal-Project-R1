@@ -637,8 +637,8 @@ details ul li:hover {
 }
 
 .hover-box:hover {
-    border-radius: 0;
-    box-shadow: 3px 3px 0px 3px #E8A520;
+    border-radius: 0.3;
+    /* box-shadow: 3px 3px 0px 3px #E8A520; */
 }
 
 .hover-box img {
@@ -661,7 +661,7 @@ details ul li:hover {
     height: 100%;
     padding: 20px;
     background: rgba(0, 0, 0, 0.5);
-    border: 2px solid #F6EEE1;
+    /* border: 2px solid #F6EEE1; */
     box-shadow: 3px 3px 0px 3px #E8A520;
     color: white;
     opacity: 0;
