@@ -234,7 +234,7 @@ RWD 下拉選單樣式 - 新增
     }
 
     /* Store 頁面 Banner 高度調整 */
-    .container-store ~ .banner,
+    .container-store~.banner,
     body.page-default .banner {
         height: 250px;
     }
@@ -321,10 +321,33 @@ RWD 下拉選單樣式 - 新增
         padding: 40px 20px;
         display: flex;
         gap: 30px;
+        justify-content: center;
     }
 
     .container-store .sidebar {
         width: 220px;
+    }
+
+    /* Item頁面平板版相關商品調整 */
+    .related-products .section-title {
+        font-size: 20px;
+        /* 縮小標題字體 */
+    }
+
+    .related-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        /* 縮小間距 */
+    }
+
+    .related-card {
+        aspect-ratio: 0.8;
+        /* 調整卡片比例，避免過扁 */
+    }
+
+    .related-image {
+        height: 140px;
+        /* 固定圖片高度 */
     }
 }
 
@@ -346,7 +369,7 @@ RWD 下拉選單樣式 - 新增
     }
 
     /* Store 頁面 Banner 高度調整 */
-    .container-store ~ .banner,
+    .container-store~.banner,
     body.page-default .banner {
         height: 200px;
     }
@@ -493,7 +516,8 @@ RWD 下拉選單樣式 - 新增
     .product-image {
         width: calc(100% - 20px) !important;
         height: 0 !important;
-        padding-bottom: calc(85% - 17px) !important; /* 調整為接近正方形 */
+        padding-bottom: calc(85% - 17px) !important;
+        /* 調整為接近正方形 */
         margin: 10px !important;
         position: relative !important;
         border-radius: 12px !important;
@@ -1006,7 +1030,7 @@ RWD 下拉選單樣式 - 新增
     }
 
     /* Store 頁面 Banner 高度進一步調整 */
-    .container-store ~ .banner,
+    .container-store~.banner,
     body.page-default .banner {
         height: 160px;
     }
@@ -1129,7 +1153,8 @@ RWD 下拉選單樣式 - 新增
     /* 圖片區域 - 保持正方形比例但更小 */
     .product-image {
         width: calc(100% - 16px) !important;
-        padding-bottom: calc(75% - 12px) !important; /* 調整為更接近正方形 */
+        padding-bottom: calc(75% - 12px) !important;
+        /* 調整為更接近正方形 */
         margin: 8px !important;
         border-radius: 8px !important;
     }
@@ -1587,6 +1612,70 @@ RWD 下拉選單樣式 - 新增
         font-size: 18px;
         padding: 8px 20px;
         margin-top: 30px;
+    }
+
+    /* Item頁面手機版樣式調整 */
+    .quantity-actions {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+        position: relative;
+    }
+
+    .quantity-actions .quantity-selector {
+        align-self: flex-start;
+        width: fit-content;
+    }
+
+    .quantity-actions .add-to-cart {
+        width: calc(100% - 60px);
+        /* 修改：縮短寬度 */
+        justify-content: center;
+        margin-right: 10px;
+        /* 新增：右邊距 */
+    }
+
+    .quantity-actions .wishlist-btn {
+        position: absolute;
+        /* 修改：改為絕對定位 */
+        right: 0;
+        /* 新增：靠右對齊 */
+        bottom: 0;
+        /* 新增：靠底對齊 */
+        width: 50px;
+        /* 修改：固定寬度 */
+        height: 50px;
+        /* 新增：固定高度 */
+    }
+
+    /* Item頁面手機版相關商品調整 */
+    .related-products .section-title {
+        font-size: 18px;
+    }
+
+    .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .related-card {
+        aspect-ratio: 0.85;
+    }
+
+    .related-image {
+        height: 160px;
+    }
+
+    .related-info {
+        padding: 8px;
+    }
+
+    .related-name {
+        font-size: 12px;
+    }
+
+    .related-price {
+        font-size: 14px;
     }
 
     /* Footer調整 */
