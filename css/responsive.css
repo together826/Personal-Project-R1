@@ -1,5 +1,5 @@
 /* ==========================================================================
-Mt. TW 響應式設計樣式表 - 包含固定Header - 修正Store頁面版本
+Mt. TW 響應式設計樣式表 - Store 頁面 RWD 優化版本
    ========================================================================== */
 
 /* Best Sellers Desktop 原本樣式恢復 - 只影響非store頁面 */
@@ -169,6 +169,52 @@ Mt. TW 響應式設計樣式表 - 包含固定Header - 修正Store頁面版本
 }
 
 /* ==========================================================================
+RWD 下拉選單樣式 - 新增
+   ========================================================================== */
+.mobile-filters {
+    display: none;
+    width: 100%;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.filter-dropdown {
+    position: relative;
+    width: 48%;
+}
+
+.filter-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #E8A520;
+    border-radius: 12px;
+    background: white;
+    font-size: 14px;
+    color: #283A29;
+    appearance: none;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23283A29" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #283A29;
+    box-shadow: 0 0 0 3px rgba(232, 165, 32, 0.2);
+}
+
+.filter-select option {
+    padding: 8px;
+    font-size: 14px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
 平板響應式設計 (max-width: 1024px)
    ========================================================================== */
 @media (max-width: 1024px) {
@@ -185,6 +231,12 @@ Mt. TW 響應式設計樣式表 - 包含固定Header - 修正Store頁面版本
 
     body.page-login {
         padding-top: 120px;
+    }
+
+    /* Store 頁面 Banner 高度調整 */
+    .container-store ~ .banner,
+    body.page-default .banner {
+        height: 250px;
     }
 
     /* Hero Section調整 - 只影響首頁 */
@@ -293,6 +345,16 @@ Mt. TW 響應式設計樣式表 - 包含固定Header - 修正Store頁面版本
         /* 移動端所有header都是70px */
     }
 
+    /* Store 頁面 Banner 高度調整 */
+    .container-store ~ .banner,
+    body.page-default .banner {
+        height: 200px;
+    }
+
+    .banner-title {
+        font-size: 36px;
+    }
+
     /* Header響應式 - 固定版本 */
     .header-index {
         height: 70px;
@@ -368,26 +430,36 @@ Mt. TW 響應式設計樣式表 - 包含固定Header - 修正Store頁面版本
         z-index: 10 !important;
     }
 
-    /* Store頁面移動版樣式 */
+    /* Store頁面移動版樣式 - 優化版 */
     .container-store {
         flex-direction: column;
-        gap: 20px;
-        padding: 20px 15px;
+        gap: 0;
+        padding: 20px;
     }
 
+    /* 隱藏原本的側邊欄 */
     .sidebar {
-        width: 100%;
-        order: 2;
+        display: none;
+    }
+
+    /* 顯示下拉選單版本的篩選器 */
+    .mobile-filters {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        order: 1;
     }
 
     .product-area {
-        order: 1;
+        order: 2;
+        width: 100%;
     }
 
     .product-header {
         flex-direction: column;
         gap: 15px;
         align-items: flex-start;
+        margin-bottom: 15px;
     }
 
     .filter-tags {
@@ -396,49 +468,127 @@ Mt. TW 響應式設計樣式表 - 包含固定Header - 修正Store頁面版本
         padding-bottom: 5px;
     }
 
+    /* 產品網格調整為2欄 */
     .product-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 15px !important;
+        margin-bottom: 30px;
     }
 
+    /* 產品卡片樣式優化 */
     .container-store .product-card {
-        aspect-ratio: 0.8 !important;
+        aspect-ratio: 0.75 !important;
+        border-radius: 15px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
+    .container-store .product-card:hover {
+        transform: translateY(-4px) !important;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    /* 產品圖片區域 - 保持正方形比例 */
     .product-image {
-        width: 100% !important;
-        height: 150px !important;
+        width: calc(100% - 20px) !important;
+        height: 0 !important;
+        padding-bottom: calc(85% - 17px) !important; /* 調整為接近正方形 */
         margin: 10px !important;
+        position: relative !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
     }
 
     .product-image img {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
         width: 100% !important;
-        height: 150px !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: 12px !important;
     }
 
+    /* 產品資訊區域 */
     .product-info {
-        padding: 0 15px 15px 15px !important;
+        padding: 0 12px 15px 12px !important;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-meta {
+        margin-bottom: 8px;
+    }
+
+    .rating {
+        margin-bottom: 6px;
+    }
+
+    .stars {
+        font-size: 16px;
+    }
+
+    .rating-score {
+        font-size: 16px;
+    }
+
+    .color-dots {
+        gap: 4px;
+    }
+
+    .color-dot {
+        width: 15px;
+        height: 15px;
     }
 
     .product-name {
-        font-size: 14px !important;
+        font-size: 18px !important;
         line-height: 1.3 !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 8px !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .product-bottom {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .product-price {
-        font-size: 20px !important;
+        font-size: 28px !important;
+        font-weight: bold;
     }
 
     .cart-btn-small {
-        width: 35px !important;
-        height: 35px !important;
-        font-size: 14px !important;
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 13px !important;
+        border-radius: 8px;
     }
 
-    /* 隱藏側邊欄在小螢幕 */
-    .sidebar {
-        display: none;
+    .heart-btn {
+        top: 12px;
+        right: 12px;
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    /* 分頁調整 */
+    .pagination {
+        margin-top: 40px;
+        gap: 6px;
+    }
+
+    .page-btn {
+        padding: 6px 10px;
+        font-size: 14px;
     }
 
     /* Hero Section調整 - 只影響首頁 */
@@ -855,6 +1005,16 @@ Mt. TW 響應式設計樣式表 - 包含固定Header - 修正Store頁面版本
         /* 手機版所有header都是70px */
     }
 
+    /* Store 頁面 Banner 高度進一步調整 */
+    .container-store ~ .banner,
+    body.page-default .banner {
+        height: 160px;
+    }
+
+    .banner-title {
+        font-size: 28px;
+    }
+
     /* Header調整 - 固定版本 */
     .header-index,
     .header-default,
@@ -917,31 +1077,142 @@ Mt. TW 響應式設計樣式表 - 包含固定Header - 修正Store頁面版本
         padding: 15px 0;
     }
 
-    /* Store頁面手機版樣式 */
+    /* Store頁面手機版樣式 - 大幅優化 */
+    .container-store {
+        padding: 15px;
+        gap: 0;
+    }
+
+    /* 下拉選單調整 */
+    .mobile-filters {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .filter-dropdown {
+        width: 100%;
+    }
+
+    .filter-select {
+        padding: 10px 12px;
+        font-size: 13px;
+        border-radius: 10px;
+    }
+
+    .filter-select option {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* 產品網格 - 維持2欄但縮小間距 */
     .product-grid {
-        grid-template-columns: 1fr !important;
-        gap: 15px !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        margin-bottom: 25px;
     }
 
+    /* 產品卡片大幅縮小 */
     .container-store .product-card {
-        max-width: 300px;
-        margin: 0 auto;
+        aspect-ratio: 0.75 !important;
+        border-radius: 12px;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
     }
 
+    .container-store .product-card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    /* 圖片區域 - 保持正方形比例但更小 */
     .product-image {
-        height: 200px !important;
+        width: calc(100% - 16px) !important;
+        padding-bottom: calc(75% - 12px) !important; /* 調整為更接近正方形 */
+        margin: 8px !important;
+        border-radius: 8px !important;
     }
 
     .product-image img {
-        height: 200px !important;
+        border-radius: 8px !important;
+    }
+
+    /* 產品資訊緊湊版 */
+    .product-info {
+        padding: 0 8px 12px 8px !important;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-meta {
+        margin-bottom: 6px;
+    }
+
+    .rating {
+        margin-bottom: 4px;
+    }
+
+    .stars {
+        font-size: 10px;
+    }
+
+    .rating-score {
+        font-size: 9px;
+    }
+
+    .color-dots {
+        gap: 3px;
+    }
+
+    .color-dot {
+        width: 8px;
+        height: 8px;
+        border-width: 1px;
     }
 
     .product-name {
-        font-size: 16px !important;
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 6px !important;
+        -webkit-line-clamp: 2;
+        max-height: calc(1.2em * 2);
     }
 
     .product-price {
-        font-size: 22px !important;
+        font-size: 18px !important;
+        font-weight: bold;
+    }
+
+    .cart-btn-small {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 11px !important;
+        border-radius: 6px;
+    }
+
+    .heart-btn {
+        top: 10px;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+    }
+
+    /* 分頁手機版調整 */
+    .pagination {
+        margin-top: 30px;
+        gap: 4px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .page-btn {
+        padding: 6px 8px;
+        font-size: 12px;
+        min-width: 32px;
+        border-radius: 4px;
     }
 
     /* Hero Section調整 */

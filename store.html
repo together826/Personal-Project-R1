@@ -114,19 +114,46 @@
             </div>
 
             <!-- Price -->
-            <div class="filter-box">
+            <!-- <div class="filter-box">
                 <h3 class="filter-title">價格</h3>
                 <input type="range" min="0" max="12000" value="6000" class="price-slider">
                 <div class="price-labels">
                     <span>$0</span>
                     <span>$12000</span>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <!-- Product Area -->
         <div class="product-area">
-            <!-- Product Header -->
+            <!-- Mobile Filters - 新增的下拉選單區域 -->
+            <div class="mobile-filters">
+                <div class="filter-dropdown">
+                    <select class="filter-select" id="categoryFilter">
+                        <option value="">選擇商品分類</option>
+                        <option value="hiking-bags">登山健行包 (61)</option>
+                        <option value="hiking-shoes">登山鞋襪 (26)</option>
+                        <option value="clothing">服飾 (47)</option>
+                        <option value="equipment">裝備/配件 (28)</option>
+                        <option value="others">其他 (8)</option>
+                    </select>
+                </div>
+                <div class="filter-dropdown">
+                    <select class="filter-select" id="brandFilter">
+                        <option value="">選擇品牌</option>
+                        <option value="icebreaker">Icebreaker</option>
+                        <option value="lowa">LOWA</option>
+                        <option value="montura">MONTURA</option>
+                        <option value="buff">BUFF</option>
+                        <option value="sunday-afternoons">Sunday Afternoons</option>
+                        <option value="camelbak">CAMELBAK</option>
+                        <option value="stubble-co">Stubble & Co</option>
+                        <option value="others">其他</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Product Header
             <div class="product-header">
                 <div class="sort-info">
                     排序：價格由低到高｜顯示 1/250 項結果
@@ -136,7 +163,7 @@
                     <span class="filter-tag">登山背包</span>
                     <span class="filter-tag">2L ~ 40L</span>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Product Grid -->
             <div class="product-grid">
@@ -155,7 +182,8 @@
                                 <span class="rating-score">4.7</span>
                             </div>
                             <div class="color-dots">
-                                <div class="color-dot color-green active"></div>
+                                <!-- <div class="color-dot color-green active"></div> -->
+                                <div class="color-dot color-green"></div>
                                 <div class="color-dot color-blue"></div>
                                 <div class="color-dot color-orange"></div>
                             </div>
@@ -184,7 +212,7 @@
                                 <span class="rating-score">4.7</span>
                             </div>
                             <div class="color-dots">
-                                <div class="color-dot color-blue active"></div>
+                                <div class="color-dot color-blue"></div>
                                 <div class="color-dot color-orange"></div>
                             </div>
                         </div>
@@ -212,7 +240,7 @@
                                 <span class="rating-score">4.7</span>
                             </div>
                             <div class="color-dots">
-                                <div class="color-dot color-orange active"></div>
+                                <div class="color-dot color-orange"></div>
                                 <div class="color-dot color-green"></div>
                             </div>
                         </div>
@@ -240,7 +268,7 @@
                                 <span class="rating-score">4.7</span>
                             </div>
                             <div class="color-dots">
-                                <div class="color-dot color-green active"></div>
+                                <div class="color-dot color-green"></div>
                                 <div class="color-dot color-blue"></div>
                             </div>
                         </div>
@@ -268,7 +296,7 @@
                                 <span class="rating-score">4.7</span>
                             </div>
                             <div class="color-dots">
-                                <div class="color-dot color-blue active"></div>
+                                <div class="color-dot color-blue"></div>
                                 <div class="color-dot color-orange"></div>
                             </div>
                         </div>
@@ -296,7 +324,7 @@
                                 <span class="rating-score">4.7</span>
                             </div>
                             <div class="color-dots">
-                                <div class="color-dot color-orange active"></div>
+                                <div class="color-dot color-orange"></div>
                                 <div class="color-dot color-green"></div>
                             </div>
                         </div>
@@ -324,7 +352,7 @@
                                 <span class="rating-score">4.7</span>
                             </div>
                             <div class="color-dots">
-                                <div class="color-dot color-green active"></div>
+                                <div class="color-dot color-green"></div>
                                 <div class="color-dot color-blue"></div>
                             </div>
                         </div>
@@ -352,7 +380,7 @@
                                 <span class="rating-score">4.7</span>
                             </div>
                             <div class="color-dots">
-                                <div class="color-dot color-blue active"></div>
+                                <div class="color-dot color-blue"></div>
                                 <div class="color-dot color-orange"></div>
                             </div>
                         </div>
@@ -380,7 +408,7 @@
                                 <span class="rating-score">4.7</span>
                             </div>
                             <div class="color-dots">
-                                <div class="color-dot color-orange active"></div>
+                                <div class="color-dot color-orange"></div>
                                 <div class="color-dot color-green"></div>
                             </div>
                         </div>
@@ -408,7 +436,7 @@
                                 <span class="rating-score">4.7</span>
                             </div>
                             <div class="color-dots">
-                                <div class="color-dot color-green active"></div>
+                                <div class="color-dot color-green"></div>
                                 <div class="color-dot color-blue"></div>
                             </div>
                         </div>
@@ -436,7 +464,7 @@
                                 <span class="rating-score">4.7</span>
                             </div>
                             <div class="color-dots">
-                                <div class="color-dot color-blue active"></div>
+                                <div class="color-dot color-blue"></div>
                                 <div class="color-dot color-orange"></div>
                             </div>
                         </div>
@@ -464,7 +492,7 @@
                                 <span class="rating-score">4.7</span>
                             </div>
                             <div class="color-dots">
-                                <div class="color-dot color-orange active"></div>
+                                <div class="color-dot color-orange"></div>
                                 <div class="color-dot color-green"></div>
                             </div>
                         </div>
@@ -563,6 +591,32 @@
             }
             btn.classList.add('active');
         }
+
+        // 新增：下拉選單功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryFilter = document.getElementById('categoryFilter');
+            const brandFilter = document.getElementById('brandFilter');
+
+            // 商品分類篩選
+            if (categoryFilter) {
+                categoryFilter.addEventListener('change', function() {
+                    const selectedValue = this.value;
+                    console.log('選擇的商品分類:', selectedValue);
+                    // 這裡可以添加實際的篩選邏輯
+                    // filterProductsByCategory(selectedValue);
+                });
+            }
+
+            // 品牌篩選
+            if (brandFilter) {
+                brandFilter.addEventListener('change', function() {
+                    const selectedValue = this.value;
+                    console.log('選擇的品牌:', selectedValue);
+                    // 這裡可以添加實際的篩選邏輯
+                    // filterProductsByBrand(selectedValue);
+                });
+            }
+        });
     </script>
 </body>
 
