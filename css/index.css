@@ -59,7 +59,7 @@ body {
     height: 806px;
     margin: 40px auto;
     border-radius: 60px;
-    background: url(/img/img_6450_2.jpg) center center / cover no-repeat;
+    background: url(./img/img_6450_2.jpg) center center / cover no-repeat;
     box-shadow: 12px 12px 0px #E8A520;
     position: relative;
     overflow: visible;
