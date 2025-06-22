@@ -1,5 +1,5 @@
 /* ==========================================================================
-Mt. TW 響應式設計樣式表
+Mt. TW 響應式設計樣式表 - 包含固定Header
    ========================================================================== */
 
 /* Best Sellers Desktop 原本樣式恢復 */
@@ -43,7 +43,7 @@ Mt. TW 響應式設計樣式表
         flex-wrap: wrap;
         margin-top: 40px;
     }
-    
+
     .product-card {
         background-color: #3C6C44;
         width: 340px;
@@ -57,13 +57,13 @@ Mt. TW 響應式設計樣式表
         cursor: pointer;
         text-decoration: none;
     }
-    
+
     .product-card:hover {
         transform: scale(1.05);
     }
 }
 
-/* Mobile Menu Styles */
+/* Mobile Menu Styles - 固定版本 */
 .mobile-menu-btn {
     display: none;
     color: #F6EEE0;
@@ -81,7 +81,7 @@ Mt. TW 響應式設計樣式表
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
+    z-index: 1100;
 }
 
 .mobile-menu {
@@ -92,7 +92,7 @@ Mt. TW 響應式設計樣式表
     height: 100vh;
     background: #283A29;
     transition: right 0.3s ease;
-    z-index: 1001;
+    z-index: 1101;
     overflow-y: auto;
 }
 
@@ -107,7 +107,7 @@ Mt. TW 響應式設計樣式表
     color: #F6EEE0;
     font-size: 28px;
     cursor: pointer;
-    z-index: 1002;
+    z-index: 1102;
 }
 
 .mobile-menu-items {
@@ -145,6 +145,21 @@ Mt. TW 響應式設計樣式表
 平板響應式設計 (max-width: 1024px)
    ========================================================================== */
 @media (max-width: 1024px) {
+
+    /* 調整body padding for 固定header */
+    body {
+        padding-top: 80px;
+        /* header-index height */
+    }
+
+    body.page-default {
+        padding-top: 120px;
+    }
+
+    body.page-login {
+        padding-top: 120px;
+    }
+
     /* Hero Section調整 */
     .hero {
         width: 85%;
@@ -225,11 +240,54 @@ Mt. TW 響應式設計樣式表
 平板響應式設計 (max-width: 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* Header響應式 */
+
+    /* 調整body padding for 固定header */
+    body {
+        padding-top: 70px;
+        /* 移動端 header 高度 */
+    }
+
+    body.page-default,
+    body.page-login {
+        padding-top: 70px;
+        /* 移動端所有header都是70px */
+    }
+
+    /* Header響應式 - 固定版本 */
     .header-index {
+        height: 70px;
         justify-content: space-between;
         padding: 0 20px;
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #334B35;
+    }
+
+    .header-default {
+        height: 70px;
+        justify-content: space-between;
+        padding: 0 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #283A29;
+    }
+
+    .header-login {
+        height: 70px;
+        justify-content: space-between;
+        padding: 0 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #283A29;
     }
 
     .nav {
@@ -238,18 +296,30 @@ Mt. TW 響應式設計樣式表
 
     .mobile-menu-btn {
         display: block;
-        margin-top: 25px;
         position: absolute;
         right: 20px;
-        top: 50%;
+        top: 45%;
         transform: translateY(-50%);
+        font-size: 22px;
+        z-index: 1002;
     }
 
     .logo-wrapper {
         position: absolute;
         left: 50%;
-        top: 50%;
+        top: 45%;
         transform: translate(-50%, -50%);
+    }
+
+    .logo {
+        width: 50px;
+        padding-top: 0;
+        transform: scale(0.9);
+    }
+
+    .logo-text {
+        font-size: 11px;
+        margin-top: -4px;
     }
 
     /* Hero Section調整 */
@@ -586,30 +656,51 @@ Mt. TW 響應式設計樣式表
 手機響應式設計 (max-width: 480px)
    ========================================================================== */
 @media (max-width: 480px) {
-    /* Header調整 */
-    .header-index {
+
+    /* 調整body padding for 固定header */
+    body {
+        padding-top: 70px;
+        /* 手機版 header 高度 */
+    }
+
+    body.page-default,
+    body.page-login {
+        padding-top: 70px;
+        /* 手機版所有header都是70px */
+    }
+
+    /* Header調整 - 固定版本 */
+    .header-index,
+    .header-default,
+    .header-login {
         height: 70px;
         padding: 0 15px;
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        justify-content: space-between;
     }
 
     .logo {
-        width: 60px;
-        padding-top: 15px;
+        width: 45px;
+        padding-top: 0;
+        transform: scale(0.8);
     }
 
     .logo-text {
-        font-size: 12px;
-        margin-top: -10px;
+        font-size: 9px;
+        margin-top: -2px;
     }
 
     .mobile-menu-btn {
-        margin-top: 20px;
         font-size: 20px;
         position: absolute;
         right: 15px;
-        top: 50%;
+        top: 42%;
         transform: translateY(-50%);
+        z-index: 1002;
     }
 
     .logo-wrapper {
@@ -955,7 +1046,7 @@ Mt. TW 響應式設計樣式表
 }
 
 /* ==========================================================================
-Mobile Menu Active State
+Mobile Menu Active State - 固定版本
    ========================================================================== */
 .mobile-menu-overlay.active {
     display: block;

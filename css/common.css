@@ -96,7 +96,7 @@ th {
 }
 
 /* ==========================================================================
-Header 共用樣式
+Header 共用樣式 - 固定在頂部
    ========================================================================== */
 
 header {
@@ -106,14 +106,17 @@ header {
     align-items: center;
     gap: 40px;
     font-size: 16px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 /* 首頁特殊header樣式 */
 .header-index {
     height: 80px;
     background-color: #334B35;
-    z-index: 2;
 }
 
 /* 其他頁面header樣式 */
@@ -126,7 +129,22 @@ header {
 .header-login {
     height: 120px;
     background-color: #283A29;
-    z-index: 2;
+}
+
+/* 為body添加上邊距，避免內容被header遮蓋 */
+body {
+    padding-top: 80px;
+    /* 首頁header高度 */
+}
+
+/* 為使用default header的頁面調整body padding */
+body.page-default {
+    padding-top: 120px;
+}
+
+/* 為使用login header的頁面調整body padding */
+body.page-login {
+    padding-top: 120px;
 }
 
 /* 導航項目 */
@@ -144,19 +162,19 @@ header {
 
 /* 首頁導航樣式 */
 .header-index .nav-item {
-    margin-top: 50px;
+    margin-top: 32px;
     color: #F6EEE0;
 }
 
 /* 其他頁面導航樣式 */
 .header-default .nav-item {
-    margin-top: 50px;
+    margin-top: 40px;
     color: #EEE7DD;
 }
 
 /* 登入頁面導航樣式 */
 .header-login .nav-item {
-    margin-top: 70px;
+    margin-top: 40px;
     color: #F6EEE0;
 }
 
@@ -203,23 +221,23 @@ header {
 .logo {
     width: 80px;
     height: auto;
-    transform: scale(0.7);
+    transform: scale(0.5);
 }
 
 /* 首頁logo特殊樣式 */
 .header-index .logo {
-    padding-top: 25px;
+    padding-top: 10px;
 }
 
 /* 其他頁面logo樣式 */
 .header-default .logo {
-    padding-top: 25px;
+    padding-top: 15px;
 }
 
 /* 登入頁面logo樣式 */
 .header-login .logo {
-    padding-top: 30px;
-    scale: 70%;
+    padding-top: 20px;
+    scale: 50%;
 }
 
 .logo-wrapper {
@@ -237,23 +255,23 @@ header {
 
 .logo-text {
     font-family: 'Fugaz One', cursive;
-    font-size: 15px;
+    font-size: 11px;
     color: #F6EEE0;
 }
 
 /* 首頁logo文字樣式 */
 .header-index .logo-text {
-    margin-top: -15px;
+    margin-top: -16px;
 }
 
 /* 其他頁面logo文字樣式 */
 .header-default .logo-text {
-    margin-top: -15px;
+    margin-top: -18px;
 }
 
 /* 登入頁面logo文字樣式 */
 .header-login .logo-text {
-    margin-top: -20px;
+    margin-top: -18px;
 }
 
 /* 導航容器 */
@@ -273,17 +291,17 @@ header {
 
 /* 首頁圖標樣式 */
 .header-index .icon {
-    transform: translateY(25px);
+    transform: translateY(15px);
 }
 
 /* 其他頁面圖標樣式 */
 .header-default .icon {
-    transform: translateY(25px);
+    transform: translateY(18px);
 }
 
 /* 登入頁面圖標樣式 */
 .header-login .icon {
-    transform: translateY(28px);
+    transform: translateY(18px);
     margin-top: -5px;
 }
 
