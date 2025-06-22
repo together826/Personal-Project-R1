@@ -347,6 +347,8 @@ details ul li:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
 }
 
 .trail-card:hover .trail-info {
@@ -368,14 +370,15 @@ details ul li:hover {
 }
 
 .trail-info h2 {
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 700;
     color: #E8A520;
     text-shadow: 3px 3px 0px #000000;
-    margin-bottom: 16px;
+    margin-bottom: 50px;
     writing-mode: vertical-rl;
     text-orientation: upright;
-    margin-left: -30px;
+    margin-left: -20px;
+    letter-spacing: 5px;
 }
 
 .trail-info p {
