@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/responsive.css">
 
     <style>
         .hero {
@@ -29,10 +30,10 @@
 <body>
     <!-- Header Section -->
     <header class="header-index">
-        <div class="nav">
-            <a href="trail.html" class="nav-item" data-en="trail">找路線</a>
-            <a href="news.html" class="nav-item" data-en="news">山系速報</a>
-            <a href="journal.html" class="nav-item" data-en="journal">山人小誌</a>
+        <div class="nav nav-left">
+            <a href="trail.html" class="nav-item" data-en="TRAIL">找路線</a>
+            <a href="news.html" class="nav-item" data-en="NEWS">山系速報</a>
+            <a href="journal.html" class="nav-item" data-en="JOURNAL">山人小誌</a>
         </div>
         <div class="logo-wrapper">
             <a href="index.html">
@@ -40,11 +41,36 @@
                 <div class="logo-text">Mt. TW</div>
             </a>
         </div>
-        <div class="nav">
-            <a href="store.html" class="nav-item" data-en="store">山用選物</a>
-            <a href="login.html" class="nav-item" data-en="member">會員中心</a>
-            <img src="https://www.svgrepo.com/show/532555/search.svg" class="icon" alt="search">
+        <div class="nav nav-right">
+            <a href="store.html" class="nav-item" data-en="STORE">山用選物</a>
+            <a href="login.html" class="nav-item" data-en="MEMBER">會員中心</a>
+            <img src="./icon/search.png" class="icon" alt="search">
             <img src="./icon/cart.png" class="icon" alt="cart">
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay">
+            <div class="mobile-menu">
+                <div class="mobile-menu-close">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="mobile-menu-items">
+                    <a href="trail.html" class="mobile-nav-item">找路線</a>
+                    <a href="news.html" class="mobile-nav-item">山系速報</a>
+                    <a href="journal.html" class="mobile-nav-item">山人小誌</a>
+                    <a href="store.html" class="mobile-nav-item">山用選物</a>
+                    <a href="login.html" class="mobile-nav-item">會員中心</a>
+                    <div class="mobile-menu-icons">
+                        <img src="./icon/search.png" class="icon" alt="search">
+                        <img src="./icon/cart.png" class="icon" alt="cart">
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -179,7 +205,7 @@
                     <div class="card-title">區內道路「宜專一線」7k下邊坡崩塌路基掏空</div>
                     <div class="card-desc">太平山國家森林遊樂區內道路「宜專一線」7k下邊坡崩塌，導致路基掏空，外側車道路面明顯，同......</div>
                     <div class="card-footer">
-                        <span>2025/04/30</span><span>👁️ 5,230次點閱</span>
+                        <span>2025/04/30</span><span><i class="fas fa-eye"></i> 5,230次點閱</span>
                     </div>
                 </a>
 
@@ -190,7 +216,7 @@
                     <div class="card-title">夏天爬山必看：防中暑脫水，6個關鍵注意事項</div>
                     <div class="card-desc">2025年夏天根據多方氣象預測，很可能再度刷新近十年最炎熱的紀錄。隨著步道即將邁入五月，......</div>
                     <div class="card-footer">
-                        <span>2025/04/30</span><span>👁️ 3,139次點閱</span>
+                        <span>2025/04/30</span><span><i class="fas fa-eye"></i> 3,139次點閱</span>
                     </div>
                 </a>
 
@@ -201,7 +227,7 @@
                     <div class="card-title">富士山新規上路！登頂費用翻倍、夜間受限</div>
                     <div class="card-desc">2025年，日本政府將對富士山四大登山路線實施一系列全新規定，從費用調整、夜間限制到裝備審......</div>
                     <div class="card-footer">
-                        <span>2025/04/30</span><span>👁️ 3,830次點閱</span>
+                        <span>2025/04/30</span><span><i class="fas fa-eye"></i> 3,830次點閱</span>
                     </div>
                 </a>
 
@@ -212,7 +238,7 @@
                     <div class="card-title">盜伐梨山國有林！查扣盜木6萬多公斤數量驚人</div>
                     <div class="card-desc">保七總隊第五大隊去年初獲獲通報，有盜伐集團在台中市和平區梨山一帶的國有林地內，以鏈鋸......</div>
                     <div class="card-footer">
-                        <span>2025/04/30</span><span>👁️ 5,230次點閱</span>
+                        <span>2025/04/30</span><span><i class="fas fa-eye"></i> 5,230次點閱</span>
                     </div>
                 </a>
             </div>
@@ -380,25 +406,6 @@
     </section>
 
     <!-- Footer Section -->
-    <!-- <footer class="footer footer-index">
-        <div class="footer-left">
-            <img src="icon/logo.svg" alt="Logo">
-            <div class="footer-text">
-                <h1>Mt. TW</h1>
-                <p>Explore. Record. Connect.</p>
-            </div>
-        </div>
-        <div class="footer-right">
-            <h3>Contact us</h3>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-    </footer> -->
-
-    <!-- Footer Section -->
     <footer class="footer footer-default">
         <div class="footer-content">
             <div class="footer-left">
@@ -424,7 +431,7 @@
         </div>
     </footer>
 
-
+    <script src="./js/mobile-menu.js"></script>
     <script>
         // Trail section filter functionality
         document.querySelectorAll('.filter').forEach((filter) => {
@@ -450,6 +457,18 @@
         duplicateRow(".row1", "row1-template", 4);
         duplicateRow(".row2", "row2-template", 7);
         duplicateRow(".row3", "row3-template", 5);
+
+        // News section scroll functionality  
+        function scrollCards(direction) {
+            const container = document.getElementById('cardContainer');
+            const cardWidth = 273 + 30 + 15; // card width + gap + divider
+            const scrollAmount = window.innerWidth <= 768 ? cardWidth * 2 : cardWidth;
+            
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     </script>
 </body>
 

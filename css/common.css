@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Mt. TW 網站共用樣式表
+Mt. TW 網站共用樣式表
    ========================================================================== */
 
 /* 基礎重設樣式 */
@@ -96,7 +96,7 @@ th {
 }
 
 /* ==========================================================================
-   Header 共用樣式
+Header 共用樣式
    ========================================================================== */
 
 header {
@@ -124,8 +124,8 @@ header {
 
 /* 登入頁面特殊header樣式 */
 .header-login {
-    height: 160px;
-    background-color: #334B35;
+    height: 120px;
+    background-color: #283A29;
     z-index: 2;
 }
 
@@ -170,8 +170,9 @@ header {
     content: attr(data-en);
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
     height: 30px;
     background-color: #E8A520;
     color: #000;
@@ -179,6 +180,12 @@ header {
     justify-content: center;
     align-items: center;
     font-family: 'Fugaz One', cursive;
+    padding: 0 12px;
+    /* 左右各12px的間距 */
+    border-radius: 10px;
+    /* 可選：稍微圓角讓效果更好看 */
+    white-space: nowrap;
+    /* 防止文字換行 */
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
@@ -281,7 +288,7 @@ header {
 }
 
 /* ==========================================================================
-   Footer 共用樣式
+Footer 共用樣式
    ========================================================================== */
 
 .footer {
@@ -293,24 +300,10 @@ header {
     margin-top: auto;
 }
 
-/* 首頁footer特殊樣式 */
-/* .footer-index {
-    justify-content: space-between;
-    height: 270px;
-}
-
-.footer-index .footer-left {
-    margin-left: 365px;
-}
-
-.footer-index .footer-right {
-    margin-right: 364px;
-} */
-
 /* 其他頁面footer樣式 */
 .footer-default {
     flex-direction: column;
-    margin-top: 60px;
+    margin-top: 0;
 }
 
 .footer-content {
@@ -349,11 +342,6 @@ header {
     color: #EEE7DD;
 }
 
-/* 首頁footer文字顏色 */
-/* .footer-index .footer-text h1 {
-    color: #F6EEE1;
-}
-
 .footer-text p {
     margin-top: 6px;
     font-size: 14px;
@@ -381,7 +369,7 @@ header {
 
 .social-icons a:hover {
     transform: scale(1.2);
-} */
+}
 
 /* Footer免責聲明 */
 .footer-disclaimer {
@@ -395,7 +383,7 @@ header {
 }
 
 /* ==========================================================================
-   Banner 共用樣式
+Banner 共用樣式
    ========================================================================== */
 
 .banner {
@@ -443,7 +431,7 @@ header {
 }
 
 /* ==========================================================================
-   通用容器
+通用容器
    ========================================================================== */
 
 .container {
@@ -462,7 +450,7 @@ header {
 }
 
 /* ==========================================================================
-   通用按鈕樣式
+通用按鈕樣式
    ========================================================================== */
 
 .btn-primary {
@@ -501,54 +489,4 @@ header {
 .btn-secondary:hover {
     background: #E8A520;
     transform: scale(1.05);
-}
-
-/* ==========================================================================
-   響應式設計
-   ========================================================================== */
-
-@media (max-width: 768px) {
-    .container {
-        padding: 20px 15px;
-    }
-
-    .container-store {
-        flex-direction: column;
-        padding: 20px 15px;
-    }
-
-    .nav {
-        gap: 30px;
-    }
-
-    .footer {
-        flex-direction: column;
-        height: auto;
-        padding: 30px 20px;
-        text-align: center;
-    }
-
-    .footer-index {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .footer-index .footer-left,
-    .footer-index .footer-right {
-        margin: 0;
-    }
-
-    .footer-left {
-        margin-bottom: 20px;
-    }
-
-    .banner-title {
-        font-size: 36px;
-    }
-}
-
-@media (max-width: 480px) {
-    .banner-title {
-        font-size: 28px;
-    }
 }

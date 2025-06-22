@@ -414,7 +414,7 @@
         }
 
         .spec-table th {
-            background: #f8f8f8;
+            /* background: #f8f8f8; */
             font-weight: bold;
             color: #283A29;
             width: 30%;

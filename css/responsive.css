@@ -1,0 +1,967 @@
+/* ==========================================================================
+Mt. TW 響應式設計樣式表
+   ========================================================================== */
+
+/* Best Sellers Desktop 原本樣式恢復 */
+.sell-more-button {
+    margin: 50px auto 0;
+    display: block;
+    background: #E8A520;
+    color: #FFF;
+    font-size: 24px;
+    font-family: 'Fugaz One';
+    padding: 12px 40px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.sell-more-button:hover {
+    background: #d4941c;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sell-more-button:hover {
+    background: #d4941c;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Desktop cards wrapper for best sellers - 恢復原本樣式 */
+@media (min-width: 769px) {
+    .cards-wrapper {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+    
+    .product-card {
+        background-color: #3C6C44;
+        width: 340px;
+        height: 320px;
+        border-radius: 40px;
+        padding: 0px;
+        color: white;
+        text-align: center;
+        position: relative;
+        transition: transform 0.5s ease;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    
+    .product-card:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-btn {
+    display: none;
+    color: #F6EEE0;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1002;
+    position: relative;
+}
+
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    height: 100vh;
+    background: #283A29;
+    transition: right 0.3s ease;
+    z-index: 1001;
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: #F6EEE0;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.mobile-menu-items {
+    padding: 80px 30px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    min-height: 100vh;
+}
+
+.mobile-nav-item {
+    color: #F6EEE0;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(246, 238, 224, 0.2);
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.mobile-nav-item:hover {
+    color: #E8A520;
+}
+
+.mobile-menu-icons {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(246, 238, 224, 0.2);
+    justify-content: center;
+}
+
+/* ==========================================================================
+平板響應式設計 (max-width: 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    /* Hero Section調整 */
+    .hero {
+        width: 85%;
+        max-width: 900px;
+        height: 380px;
+        margin: 20px auto;
+        border-radius: 35px;
+        box-shadow: 8px 8px 0px #E8A520;
+    }
+
+    .slogan {
+        font-size: 30px;
+    }
+
+    .mt-title {
+        font-size: 65px;
+        margin-left: 18px;
+    }
+
+    .beige-box {
+        width: 330px;
+        height: 85px;
+        left: -18px;
+        top: 8px;
+    }
+
+    /* Hero Pattern調整 */
+    .hero-pattern-above,
+    .hero-pattern-below {
+        height: 160px;
+    }
+
+    .hero-pattern-above {
+        top: 370px;
+    }
+
+    .hero-pattern-below {
+        top: 280px;
+    }
+
+    .marquee-wrapper {
+        font-size: 120px;
+    }
+
+    /* Best Sellers Section調整 */
+    .bestseller-section {
+        padding: 40px 20px;
+    }
+
+    .section-title {
+        margin-left: 50px;
+        font-size: 60px;
+    }
+
+    .sell-title-bg {
+        width: 400px;
+        margin-left: 80px;
+        bottom: 490px;
+    }
+
+    .cards-wrapper {
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .product-card {
+        width: 300px;
+        height: 280px;
+    }
+
+    .product-card img {
+        width: 180px;
+        margin-top: -50px;
+    }
+}
+
+/* ==========================================================================
+平板響應式設計 (max-width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Header響應式 */
+    .header-index {
+        justify-content: space-between;
+        padding: 0 20px;
+        position: relative;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        margin-top: 25px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .logo-wrapper {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Hero Section調整 */
+    .hero {
+        width: 90%;
+        max-width: 600px;
+        height: 300px;
+        border-radius: 25px;
+        box-shadow: 5px 5px 0px #E8A520;
+        margin: 15px auto;
+    }
+
+    .slogan {
+        font-size: 22px;
+    }
+
+    .mt-title {
+        font-size: 45px;
+        margin-left: 12px;
+    }
+
+    .beige-box {
+        width: 220px;
+        height: 60px;
+        left: -12px;
+        top: 6px;
+    }
+
+    /* Hero Pattern調整 */
+    .hero-pattern-above {
+        top: 280px;
+        height: 130px;
+    }
+
+    .hero-pattern-below {
+        top: 210px;
+        height: 130px;
+    }
+
+    .marquee-wrapper {
+        font-size: 90px;
+    }
+
+    /* Trail Section調整 */
+    .trail-section {
+        padding: 40px 20px;
+    }
+
+    .bg-marquee-line h1 {
+        font-size: 100px;
+    }
+
+    .search-bar {
+        width: 95%;
+        height: 50px;
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        border-radius: 25px;
+    }
+
+    .filter-section {
+        width: 100%;
+        justify-content: space-around;
+        margin-bottom: 15px;
+    }
+
+    .search-input {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+    }
+
+    .search-button {
+        width: 100%;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    /* Trail Cards調整 - 顯示兩張卡片 */
+    .trail-images {
+        flex-direction: row;
+        gap: 15px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 0 10px;
+    }
+
+    .trail-card {
+        width: 280px;
+        height: 500px;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+    }
+
+    .trail-card:last-child {
+        display: none;
+    }
+
+    .trail-info h2 {
+        font-size: 50px;
+    }
+
+    .slogan-fixed {
+        bottom: 10px;
+        right: 20px;
+        font-size: 16px;
+    }
+
+    /* News Section調整 */
+    .news-section {
+        padding: 40px 20px;
+    }
+
+    .news-title {
+        margin-left: 20px;
+        margin-bottom: 30px;
+    }
+
+    .news-title h2 {
+        font-size: 50px;
+    }
+
+    .title-bg {
+        width: 180px;
+        bottom: 50px;
+    }
+
+    .green-bg {
+        width: 300px;
+        height: 120px;
+    }
+
+    .bg1 {
+        top: 100px;
+        left: 50px;
+    }
+
+    .bg2 {
+        bottom: 80px;
+        right: 20px;
+    }
+
+    .news-cards-container {
+        gap: 15px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 0 10px;
+    }
+
+    .news-card {
+        width: 220px;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+    }
+
+    .card-img {
+        width: 220px;
+        height: 165px;
+        border-radius: 20px;
+    }
+
+    .card-title {
+        width: 210px;
+        font-size: 18px;
+    }
+
+    .card-desc {
+        width: 210px;
+        height: 60px;
+        font-size: 14px;
+    }
+
+    .card-footer {
+        width: 210px;
+        font-size: 11px;
+    }
+
+    .news-divider {
+        display: none;
+    }
+
+    /* Journal Section調整 */
+    .marquee-row {
+        margin-block: 20px;
+    }
+
+    .row1 .marquee-item,
+    .row3 .marquee-item {
+        height: 150px;
+        width: 200px;
+    }
+
+    .row2 .marquee-item {
+        height: 200px;
+        width: 320px;
+    }
+
+    .green-quote p {
+        width: 160px;
+        font-size: 12px;
+    }
+
+    .hover-overlay h3 {
+        font-size: 16px;
+    }
+
+    .hover-overlay .info,
+    .hover-overlay .desc {
+        font-size: 14px;
+    }
+
+    /* Best Sellers Section調整 */
+    .bestseller-section {
+        padding: 40px 20px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .section-title {
+        margin-left: 20px;
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .sell-title-bg {
+        width: 300px;
+        margin-left: calc(50% - 150px);
+        bottom: auto;
+        position: relative;
+        height: 20px;
+        margin-top: -45px;
+        margin-bottom: 25px;
+    }
+
+    .bestseller-cards-wrapper {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        max-width: 1380px;
+        margin: 0 auto;
+    }
+
+    .bestseller-arrow {
+        font-size: 28px;
+        cursor: pointer;
+        user-select: none;
+        opacity: 0.7;
+        color: #000;
+        display: block;
+    }
+
+    .bestseller-cards-wrapper {
+        gap: 15px;
+    }
+
+    .bestseller-arrow {
+        font-size: 24px;
+        display: block;
+    }
+
+    .cards-wrapper {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 0 20px 20px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        scroll-behavior: smooth;
+    }
+
+    .cards-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .product-card {
+        width: 280px;
+        height: 260px;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+    }
+
+    .product-card img {
+        width: 160px;
+        margin-top: -40px;
+    }
+
+    .product-name {
+        font-size: 16px;
+    }
+
+    .product-desc {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 24px;
+        margin-top: 30px;
+    }
+
+    /* Footer調整 */
+    .footer {
+        padding: 30px 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-left img {
+        width: 60px;
+    }
+
+    .footer-text h1 {
+        font-size: 24px;
+    }
+
+    .footer-right h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+}
+
+/* ==========================================================================
+手機響應式設計 (max-width: 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+    /* Header調整 */
+    .header-index {
+        height: 70px;
+        padding: 0 15px;
+        position: relative;
+    }
+
+    .logo {
+        width: 60px;
+        padding-top: 15px;
+    }
+
+    .logo-text {
+        font-size: 12px;
+        margin-top: -10px;
+    }
+
+    .mobile-menu-btn {
+        margin-top: 20px;
+        font-size: 20px;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .logo-wrapper {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .mobile-menu {
+        width: 280px;
+        right: -280px;
+    }
+
+    .mobile-menu-items {
+        padding: 70px 25px 40px;
+        gap: 20px;
+    }
+
+    .mobile-nav-item {
+        font-size: 18px;
+        padding: 15px 0;
+    }
+
+    /* Hero Section調整 */
+    .hero {
+        width: 90%;
+        max-width: 400px;
+        height: 220px;
+        border-radius: 20px;
+        margin: 10px auto;
+        box-shadow: 3px 3px 0px #E8A520;
+    }
+
+    .slogan {
+        font-size: 15px;
+    }
+
+    .mt-title {
+        font-size: 32px;
+        margin-left: 8px;
+    }
+
+    .beige-box {
+        width: 160px;
+        height: 45px;
+        left: -8px;
+        top: 5px;
+    }
+
+    /* Hero Pattern調整 */
+    .hero-pattern-above {
+        top: 200px;
+        height: 100px;
+    }
+
+    .hero-pattern-below {
+        top: 150px;
+        height: 100px;
+    }
+
+    .marquee-wrapper {
+        font-size: 60px;
+    }
+
+    /* Trail Section調整 */
+    .trail-section {
+        padding: 30px 15px;
+    }
+
+    .bg-marquee-line h1 {
+        font-size: 60px;
+    }
+
+    .search-bar {
+        padding: 10px;
+    }
+
+    .filter-section {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .filter {
+        width: 100%;
+        padding: 8px;
+        background: #f5f5f5;
+        border-radius: 15px;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .search-input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .search-button {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    /* Trail Cards調整 - 顯示一張卡片 */
+    .trail-images {
+        gap: 10px;
+    }
+
+    .trail-card {
+        width: 250px;
+        height: 450px;
+    }
+
+    .trail-card:nth-child(n+2) {
+        display: none;
+    }
+
+    .trail-info h2 {
+        font-size: 40px;
+    }
+
+    .trail-info p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .more-button {
+        font-size: 18px;
+        padding: 8px 25px;
+        bottom: -60px;
+    }
+
+    .slogan-fixed {
+        font-size: 14px;
+        bottom: 5px;
+        right: 15px;
+    }
+
+    /* News Section調整 */
+    .news-section {
+        padding: 30px 15px;
+    }
+
+    .news-title h2 {
+        font-size: 36px;
+    }
+
+    .title-bg {
+        width: 140px;
+        bottom: 35px;
+    }
+
+    .green-bg {
+        width: 200px;
+        height: 80px;
+    }
+
+    .bg1 {
+        top: 80px;
+        left: 20px;
+    }
+
+    .bg2 {
+        bottom: 60px;
+        right: 10px;
+    }
+
+    .news-card {
+        width: 180px;
+    }
+
+    .card-img {
+        width: 180px;
+        height: 135px;
+        border-radius: 15px;
+    }
+
+    .card-title {
+        width: 170px;
+        font-size: 16px;
+    }
+
+    .card-desc {
+        width: 170px;
+        height: 50px;
+        font-size: 12px;
+    }
+
+    .card-footer {
+        width: 170px;
+        font-size: 10px;
+    }
+
+    .arrow {
+        font-size: 20px;
+    }
+
+    /* Journal Section調整 */
+    .row1 .marquee-item,
+    .row3 .marquee-item {
+        height: 120px;
+        width: 160px;
+    }
+
+    .row2 .marquee-item {
+        height: 160px;
+        width: 256px;
+    }
+
+    .green-quote p {
+        width: 120px;
+        font-size: 10px;
+    }
+
+    .hover-overlay {
+        padding: 15px;
+    }
+
+    .hover-overlay h3 {
+        font-size: 14px;
+    }
+
+    .hover-overlay .info,
+    .hover-overlay .desc {
+        font-size: 12px;
+    }
+
+    /* Best Sellers Section調整 */
+    .bestseller-section {
+        padding: 30px 15px;
+    }
+
+    .section-title {
+        margin-left: 0;
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .sell-title-bg {
+        width: 220px;
+        margin-left: calc(50% - 110px);
+        bottom: auto;
+        position: relative;
+        height: 15px;
+        margin-top: -35px;
+        margin-bottom: 20px;
+    }
+
+    .bg-watermark {
+        font-size: 120px;
+    }
+
+    .bg-watermark div {
+        line-height: 100px;
+    }
+
+    .cards-wrapper {
+        gap: 15px;
+        padding: 0 15px 15px;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .cards-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .product-card {
+        width: 240px;
+        height: 220px;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+    }
+
+    .product-card img {
+        width: 140px;
+        margin-top: -30px;
+    }
+
+    .product-name {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    .product-desc {
+        font-size: 12px;
+    }
+
+    .price {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .buy-button {
+        font-size: 12px;
+        padding: 4px 10px;
+        margin-top: 15px;
+    }
+
+    .sell-more-button {
+        font-size: 18px;
+        padding: 6px 20px;
+        margin-top: 20px;
+    }
+
+    /* Footer調整 */
+    .footer {
+        padding: 25px 15px;
+    }
+
+    .footer-left img {
+        width: 50px;
+        margin-right: 15px;
+    }
+
+    .footer-text h1 {
+        font-size: 20px;
+    }
+
+    .footer-text p {
+        font-size: 12px;
+    }
+
+    .footer-right h3 {
+        font-size: 16px;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+        margin-left: 8px;
+    }
+
+    .footer-disclaimer {
+        font-size: 10px;
+        padding-top: 15px;
+    }
+}
+
+/* ==========================================================================
+Mobile Menu Active State
+   ========================================================================== */
+.mobile-menu-overlay.active {
+    display: block;
+}
+
+/* 防止滾動當選單開啟時 */
+body.menu-open {
+    overflow: hidden;
+}
