@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/trail.css">
+    <link rel="stylesheet" href="./css/responsive.css">
 
 </head>
 
 <body class="page-default">
     <!-- Header -->
     <header class="header-default">
-        <div class="nav">
+        <div class="nav nav-left">
             <a href="trail.html" class="nav-item active" data-en="TRAIL">找路線</a>
             <a href="news.html" class="nav-item" data-en="NEWS">山系速報</a>
             <a href="journal.html" class="nav-item" data-en="JOURNAL">山人小誌</a>
@@ -28,11 +29,36 @@
                 <div class="logo-text">Mt. TW</div>
             </a>
         </div>
-        <div class="nav">
+        <div class="nav nav-right">
             <a href="store.html" class="nav-item" data-en="STORE">山用選物</a>
             <a href="login.html" class="nav-item" data-en="MEMBER">會員中心</a>
             <img src="icon/search.png" class="icon" alt="search">
             <a href="store.html"><img src="icon/cart.png" class="icon" alt="cart"></a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay">
+            <div class="mobile-menu">
+                <div class="mobile-menu-close">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="mobile-menu-items">
+                    <a href="trail.html" class="mobile-nav-item">找路線</a>
+                    <a href="news.html" class="mobile-nav-item">山系速報</a>
+                    <a href="journal.html" class="mobile-nav-item">山人小誌</a>
+                    <a href="store.html" class="mobile-nav-item">山用選物</a>
+                    <a href="login.html" class="mobile-nav-item">會員中心</a>
+                    <div class="mobile-menu-icons">
+                        <img src="./icon/search.png" class="icon" alt="search">
+                        <img src="./icon/cart.png" class="icon" alt="cart">
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -422,6 +448,7 @@
         </div>
     </footer>
 
+    <script src="./js/mobile-menu.js"></script>
     <script>
         // 篩選功能
         document.querySelectorAll('.filter-option').forEach(option => {
