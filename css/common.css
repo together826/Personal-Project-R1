@@ -221,22 +221,23 @@ body.page-login {
 .logo {
     width: 80px;
     height: auto;
-    transform: scale(0.5);
+    transform: scale(0.5)translateY(-10px);
 }
 
-/* 首頁logo特殊樣式 */
+/* 首頁logo特殊樣式 - 修正padding-top不能為負值的問題 */
 .header-index .logo {
-    padding-top: 10px;
+    padding-top: 5px;
+    /* 修正：不能是負值 */
 }
 
 /* 其他頁面logo樣式 */
 .header-default .logo {
-    padding-top: 15px;
+    padding-top: 10px;
 }
 
 /* 登入頁面logo樣式 */
 .header-login .logo {
-    padding-top: 20px;
+    padding-top: 15px;
     scale: 50%;
 }
 
@@ -257,21 +258,23 @@ body.page-login {
     font-family: 'Fugaz One', cursive;
     font-size: 11px;
     color: #F6EEE0;
+    transform: translateY(-5px);
 }
 
-/* 首頁logo文字樣式 */
+/* 首頁logo文字樣式 - 調整到合理範圍 */
 .header-index .logo-text {
-    margin-top: -16px;
+    margin-top: -25px;
+    /* 調整到合理範圍，不要太極端 */
 }
 
 /* 其他頁面logo文字樣式 */
 .header-default .logo-text {
-    margin-top: -18px;
+    margin-top: -24px;
 }
 
 /* 登入頁面logo文字樣式 */
 .header-login .logo-text {
-    margin-top: -18px;
+    margin-top: -24px;
 }
 
 /* 導航容器 */
