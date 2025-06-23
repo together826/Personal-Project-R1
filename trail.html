@@ -73,8 +73,64 @@
 
     <!-- Main Content -->
     <div class="container">
-        <!-- Filter Section -->
-        <div class="filter-section">
+        <!-- Mobile Filter Section (下拉式選單版本) -->
+        <div class="mobile-trail-filters">
+            <div class="mobile-filter-row">
+                <div class="filter-dropdown">
+                    <select class="trail-filter-select" data-filter="region">
+                        <option value="全部">地區 - 全部</option>
+                        <option value="北部">北部</option>
+                        <option value="中部">中部</option>
+                        <option value="南部">南部</option>
+                        <option value="東部">東部</option>
+                        <option value="外島">外島</option>
+                        <option value="其他國家">其他國家</option>
+                    </select>
+                </div>
+                <div class="filter-dropdown">
+                    <select class="trail-filter-select" data-filter="difficulty">
+                        <option value="全部">難度 - 全部</option>
+                        <option value="低">低</option>
+                        <option value="低-中">低-中</option>
+                        <option value="中">中</option>
+                        <option value="中-高">中-高</option>
+                        <option value="高">高</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mobile-filter-row">
+                <div class="filter-dropdown">
+                    <select class="trail-filter-select" data-filter="time">
+                        <option value="全部">時間 - 全部</option>
+                        <option value="3小時內">3小時內</option>
+                        <option value="3-6小時">3-6小時</option>
+                        <option value="6-12小時">6-12小時</option>
+                        <option value="12小時-2天">12小時-2天</option>
+                        <option value="兩天以上">兩天以上</option>
+                    </select>
+                </div>
+                <div class="filter-dropdown">
+                    <select class="trail-filter-select" data-filter="type">
+                        <option value="全部">類型 - 全部</option>
+                        <option value="百岳">百岳</option>
+                        <option value="小百岳">小百岳</option>
+                        <option value="其他山岳">其他山岳</option>
+                        <option value="百大名山中岳">百大必訪步道</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mobile-search-section">
+                <div class="search-bar mobile-search-bar">
+                    <input type="text" placeholder="請輸入路線 / 相關山岳" class="search-input">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i> 搜尋
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Filter Section (原本的篩選器) -->
+        <div class="filter-section desktop-filter-section">
             <div class="filter-row">
                 <div class="filter-label">
                     <i class="fas fa-map-marker-alt"></i>
@@ -87,8 +143,6 @@
                     <div class="filter-option">南部</div>
                     <div class="filter-option">東部</div>
                     <div class="filter-option">外島</div>
-                    <div class="filter-option">香港</div>
-                    <div class="filter-option">馬來西亞</div>
                     <div class="filter-option">其他國家</div>
                 </div>
             </div>
@@ -133,7 +187,7 @@
                     <div class="filter-option">百岳</div>
                     <div class="filter-option">小百岳</div>
                     <div class="filter-option">其他山岳</div>
-                    <div class="filter-option">百大名山中岳</div>
+                    <div class="filter-option">百大必訪步道</div>
                 </div>
             </div>
 
@@ -194,7 +248,7 @@
                             <span>3小時30分</span>
                         </div>
                         <div class="stat-item">
-                            <span>高度落差 2小時30分</span>
+                            <span>大屯山群</span>
                         </div>
                     </div>
 
@@ -205,9 +259,8 @@
                                 <span>615人評分</span>
                             </div>
                             <div class="view-count">
-                                <span><img src="icon/heart.png" alt="喜歡" class="icon-small">4.1萬人喜歡</span>
+                                <span> &nbsp;<img src="icon/heart.png" alt="喜歡" class="icon-small">4.1萬人喜歡</span>
                                 <span><img src="icon/eye.png" alt="去過" class="icon-small">31.9萬次點閱</span>
-                                <span>2.4萬人去過</span>
                             </div>
                         </div>
                     </div>
@@ -255,9 +308,8 @@
                                 <span>428人評分</span>
                             </div>
                             <div class="view-count">
-                                <span><img src="icon/heart.png" alt="喜歡" class="icon-small">3.2萬人喜歡</span>
+                                <span> &nbsp;<img src="icon/heart.png" alt="喜歡" class="icon-small">3.2萬人喜歡</span>
                                 <span><img src="icon/eye.png" alt="去過" class="icon-small">28.6萬次點閱</span>
-                                <span>1.8萬人去過</span>
                             </div>
                         </div>
                     </div>
@@ -305,9 +357,8 @@
                                 <span>892人評分</span>
                             </div>
                             <div class="view-count">
-                                <span><img src="icon/heart.png" alt="喜歡" class="icon-small">5.7萬人喜歡</span>
+                                <span> &nbsp;<img src="icon/heart.png" alt="喜歡" class="icon-small">5.7萬人喜歡</span>
                                 <span><img src="icon/eye.png" alt="去過" class="icon-small">45.3萬次點閱</span>
-                                <span>4.2萬人去過</span>
                             </div>
                         </div>
                     </div>
@@ -355,9 +406,8 @@
                                 <span>329人評分</span>
                             </div>
                             <div class="view-count">
-                                <span><img src="icon/heart.png" alt="喜歡" class="icon-small">2.8萬人喜歡</span>
+                                <span> &nbsp;<img src="icon/heart.png" alt="喜歡" class="icon-small">2.8萬人喜歡</span>
                                 <span><img src="icon/eye.png" alt="去過" class="icon-small">22.4萬次點閱</span>
-                                <span>1.2萬人去過</span>
                             </div>
                         </div>
                     </div>
@@ -365,7 +415,7 @@
             </div>
 
             <!-- Trail Card 5 -->
-            <div class="trail-card" onclick="window.location.href='trail.html'">
+            <!-- <div class="trail-card" onclick="window.location.href='trail.html'">
                 <div class="trail-image-container">
                     <div class="trail-image">
                         <img src="img/j/心得029.jpg" alt="玉山主峰">
@@ -405,14 +455,13 @@
                                 <span>1,234人評分</span>
                             </div>
                             <div class="view-count">
-                                <span><img src="icon/heart.png" alt="喜歡" class="icon-small">8.9萬人喜歡</span>
+                                <span> &nbsp;<img src="icon/heart.png" alt="喜歡" class="icon-small">8.9萬人喜歡</span>
                                 <span><img src="icon/eye.png" alt="去過" class="icon-small">95.7萬次點閱</span>
-                                <span>3.6萬人去過</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <!-- Load More -->
@@ -451,8 +500,8 @@
 
     <script src="./js/mobile-menu.js"></script>
     <script>
-        // 篩選功能
-        document.querySelectorAll('.filter-option').forEach(option => {
+        // 桌面版篩選功能
+        document.querySelectorAll('.desktop-filter-section .filter-option').forEach(option => {
             option.addEventListener('click', function () {
                 // 同一行的其他選項移除active
                 const row = this.closest('.filter-row');
@@ -463,6 +512,26 @@
                 this.classList.add('active');
             });
         });
+
+        // 手機版下拉選單功能
+        document.querySelectorAll('.trail-filter-select').forEach(select => {
+            select.addEventListener('change', function() {
+                const filterType = this.dataset.filter;
+                const selectedValue = this.value;
+                
+                // 這裡可以加入篩選邏輯
+                console.log(`篩選 ${filterType}: ${selectedValue}`);
+                
+                // 可以在這裡加入實際的篩選功能
+                // 例如：filterTrails(filterType, selectedValue);
+            });
+        });
+
+        // 可選：同步桌面版和手機版的篩選狀態
+        function syncFilters() {
+            // 這個函數可以用來同步兩個版本的篩選狀態
+            // 實際使用時可以根據需求實作
+        }
     </script>
 
 </body>

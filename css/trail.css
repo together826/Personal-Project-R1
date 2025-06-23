@@ -113,6 +113,127 @@ body {
     transform: scale(1.05);
 }
 
+/* Mobile Trail Filters */
+.mobile-trail-filters {
+    display: none;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.mobile-trail-filters::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #334B35;
+}
+
+.mobile-filter-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.mobile-filter-row:last-child {
+    margin-bottom: 0;
+}
+
+.mobile-trail-filters .filter-dropdown {
+    flex: 1;
+}
+
+.trail-filter-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #E8A520;
+    border-radius: 12px;
+    background: white;
+    font-size: 14px;
+    color: #283A29;
+    appearance: none;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23283A29" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.trail-filter-select:focus {
+    outline: none;
+    border-color: #E8A520;
+    box-shadow: 0 0 0 3px rgba(232, 165, 32, 0.2);
+}
+
+.trail-filter-select:hover {
+    border-color: #E8A520;
+}
+
+.trail-filter-select option {
+    padding: 10px;
+    font-size: 14px;
+    color: #283A29;
+}
+
+.mobile-search-section {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.mobile-search-bar {
+    display: flex;
+    align-items: center;
+    background: #F6EEE0;
+    border-radius: 25px;
+    padding: 8px;
+    margin: 0;
+}
+
+.mobile-search-bar .search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    color: #283A29;
+}
+
+.mobile-search-bar .search-input::placeholder {
+    color: #666;
+}
+
+.mobile-search-bar .search-btn {
+    background: #E8A520;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.mobile-search-bar .search-btn:hover {
+    background: #d4941c;
+    transform: scale(1.05);
+}
+
+/* Desktop Filter Section Class */
+.desktop-filter-section {
+    display: block;
+}
+
 /* Results Header */
 .results-header {
     display: flex;
