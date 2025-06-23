@@ -350,11 +350,17 @@ RWD 下拉選單樣式 - 新增
         /* 固定圖片高度 */
     }
 
-    /* News Cards 平板版樣式優化 */
+    /* Headlines Section 陰影效果統一 */
+    .main-headline:hover,
+    .side-headline:hover {
+        box-shadow: 5px 5px 0px rgba(232, 165, 32, 1) !important;
+    }
+
+    /* News Cards 平板版樣式優化 - 修正版 */
     .news-grid {
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 20px !important;
-        /* justify-items: center; */
+        /* 移除 justify-items: center，讓卡片正常對齊 */
     }
 
     .news-card {
@@ -366,6 +372,7 @@ RWD 下拉選單樣式 - 新增
         display: flex;
         flex-direction: column;
         height: 100%;
+        width: 100%; /* 確保卡片填滿網格區域 */
     }
 
     .news-card:hover {
@@ -431,11 +438,14 @@ RWD 下拉選單樣式 - 新增
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 12px;
-        color: #999;
         padding-top: 12px;
         border-top: 1px solid #eee;
         margin-top: auto;
+    }
+
+    .news-card-meta > span {
+        font-size: 10px;
+        color: #999;
     }
 
     .read-more-btn {
@@ -890,11 +900,11 @@ RWD 下拉選單樣式 - 新增
         right: 20px;
     }
 
-    /* News Cards 平板版樣式優化 */
+    /* News Cards 平板版樣式優化 - 修正版 */
     .news-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 15px !important;
-        /* justify-items: center; */
+        /* 移除 justify-items: center，讓卡片正常對齊 */
     }
 
     .news-card {
@@ -906,6 +916,7 @@ RWD 下拉選單樣式 - 新增
         display: flex;
         flex-direction: column;
         height: 100%;
+        width: 100%; /* 確保卡片填滿網格區域 */
     }
 
     .news-card:hover {
@@ -971,11 +982,20 @@ RWD 下拉選單樣式 - 新增
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 10px;
-        color: #999;
         padding-top: 8px;
         border-top: 1px solid #eee;
         margin-top: auto;
+    }
+
+    .news-card-meta .left-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .news-card-meta .left-info > span {
+        font-size: 9px;
+        color: #999;
     }
 
     .read-more-btn {
@@ -987,6 +1007,7 @@ RWD 下拉選單樣式 - 新增
         font-size: 9px;
         cursor: pointer;
         transition: background 0.3s ease;
+        flex-shrink: 0;
     }
 
     .read-more-btn:hover {
@@ -1626,24 +1647,32 @@ RWD 下拉選單樣式 - 新增
         right: 10px;
     }
 
-    /* News Cards手機版優化 */
+    /* News Cards手機版優化 - 修正版 */
     .news-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px !important;
-        /* justify-items: center; */
+        /* 移除 justify-items: center，讓卡片正常對齊 */
     }
 
     .news-card {
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        width: 100%; /* 確保卡片填滿網格區域 */
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
 
     .news-card-image {
         height: 120px !important;
+        width: 100%;
     }
 
     .news-card-content {
         padding: 12px !important;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
     }
 
     .news-card-title {
@@ -1657,11 +1686,28 @@ RWD 下拉選單樣式 - 新增
         margin-bottom: 10px !important;
         -webkit-line-clamp: 2 !important;
         line-height: 1.4 !important;
+        flex: 1;
     }
 
     .news-card-meta {
-        font-size: 10px !important;
         padding-top: 8px !important;
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #eee;
+    }
+
+    .news-card-meta .left-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+    }
+
+    .news-card-meta .left-info > span {
+        font-size: 8px !important;
+        color: #999;
+        line-height: 1.2;
     }
 
     .news-category-tag {
@@ -1676,6 +1722,7 @@ RWD 下拉選單樣式 - 新增
         padding: 4px 8px !important;
         font-size: 9px !important;
         border-radius: 8px !important;
+        flex-shrink: 0;
     }
 
     /* Category Filter手機版 */
