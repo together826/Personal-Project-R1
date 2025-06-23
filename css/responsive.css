@@ -334,6 +334,12 @@ RWD 下拉選單樣式 - 新增
         /* 縮小標題字體 */
     }
 
+    /* Headlines Section RWD版本直接加上陰影 */
+    .main-headline,
+    .side-headline {
+        box-shadow: 5px 5px 0px rgba(232, 165, 32, 1);
+    }
+
     .related-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 15px;
@@ -348,12 +354,6 @@ RWD 下拉選單樣式 - 新增
     .related-image {
         height: 140px;
         /* 固定圖片高度 */
-    }
-
-    /* Headlines Section 陰影效果統一 */
-    .main-headline:hover,
-    .side-headline:hover {
-        box-shadow: 5px 5px 0px rgba(232, 165, 32, 1) !important;
     }
 
     /* News Cards 平板版樣式優化 - 修正版 */
@@ -866,7 +866,11 @@ RWD 下拉選單樣式 - 新增
         font-size: 14px;
     }
 
-    /* News Section平板版樣式調整 */
+    /* Headlines Section RWD版本直接加上陰影 */
+    .main-headline,
+    .side-headline {
+        box-shadow: 5px 5px 0px rgba(232, 165, 32, 1) !important;
+    }
     .news-section {
         padding: 40px 20px;
     }
@@ -1621,6 +1625,12 @@ RWD 下拉選單樣式 - 新增
     /* News Section手機版樣式調整 */
     .news-section {
         padding: 30px 15px;
+    }
+
+    /* Headlines Section RWD版本直接加上陰影 */
+    .main-headline,
+    .side-headline {
+        box-shadow: 5px 5px 0px rgba(232, 165, 32, 1);
     }
 
     .news-title h2 {
