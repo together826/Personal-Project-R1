@@ -349,6 +349,118 @@ RWD 下拉選單樣式 - 新增
         height: 140px;
         /* 固定圖片高度 */
     }
+
+    /* News Cards 平板版樣式優化 */
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
+        /* justify-items: center; */
+    }
+
+    .news-card {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .news-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .news-card-image {
+        width: 100%;
+        height: 180px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    .news-category-tag {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: #E8A520;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: bold;
+    }
+
+    .news-card-content {
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .news-card-title {
+        font-size: 16px;
+        color: #283A29;
+        margin-bottom: 10px;
+        font-weight: bold;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .news-card-desc {
+        font-size: 13px;
+        color: #666;
+        line-height: 1.5;
+        margin-bottom: 15px;
+        flex: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .news-card-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        color: #999;
+        padding-top: 12px;
+        border-top: 1px solid #eee;
+        margin-top: auto;
+    }
+
+    .read-more-btn {
+        background: #334B35;
+        color: white;
+        padding: 6px 14px;
+        border: none;
+        border-radius: 15px;
+        font-size: 11px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .read-more-btn:hover {
+        background: #E8A520;
+    }
+
+    .category-filter {
+        gap: 12px;
+    }
+
+    .category-btn {
+        padding: 9px 18px;
+        font-size: 13px;
+    }
 }
 
 /* ==========================================================================
@@ -744,7 +856,7 @@ RWD 下拉選單樣式 - 新增
         font-size: 14px;
     }
 
-    /* News Section調整 */
+    /* News Section平板版樣式調整 */
     .news-section {
         padding: 40px 20px;
     }
@@ -776,6 +888,119 @@ RWD 下拉選單樣式 - 新增
     .bg2 {
         bottom: 80px;
         right: 20px;
+    }
+
+    /* News Cards 平板版樣式優化 */
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+        /* justify-items: center; */
+    }
+
+    .news-card {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .news-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .news-card-image {
+        width: 100%;
+        height: 140px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    .news-category-tag {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: #E8A520;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 8px;
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .news-card-content {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .news-card-title {
+        font-size: 15px;
+        color: #283A29;
+        margin-bottom: 8px;
+        font-weight: bold;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .news-card-desc {
+        font-size: 12px;
+        color: #666;
+        line-height: 1.5;
+        margin-bottom: 12px;
+        flex: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .news-card-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 10px;
+        color: #999;
+        padding-top: 8px;
+        border-top: 1px solid #eee;
+        margin-top: auto;
+    }
+
+    .read-more-btn {
+        background: #334B35;
+        color: white;
+        padding: 4px 8px;
+        border: none;
+        border-radius: 8px;
+        font-size: 9px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .read-more-btn:hover {
+        background: #E8A520;
+    }
+
+    .category-filter {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .category-btn {
+        padding: 8px 15px;
+        font-size: 12px;
     }
 
     .news-cards-container {
@@ -1372,7 +1597,7 @@ RWD 下拉選單樣式 - 新增
         right: 15px;
     }
 
-    /* News Section調整 */
+    /* News Section手機版樣式調整 */
     .news-section {
         padding: 30px 15px;
     }
@@ -1401,30 +1626,78 @@ RWD 下拉選單樣式 - 新增
         right: 10px;
     }
 
-    .news-card {
-        width: 180px;
+    /* News Cards手機版優化 */
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        /* justify-items: center; */
     }
 
-    .card-img {
-        width: 180px;
-        height: 135px;
+    .news-card {
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .news-card-image {
+        height: 120px !important;
+    }
+
+    .news-card-content {
+        padding: 12px !important;
+    }
+
+    .news-card-title {
+        font-size: 13px !important;
+        margin-bottom: 6px !important;
+        -webkit-line-clamp: 2 !important;
+    }
+
+    .news-card-desc {
+        font-size: 11px !important;
+        margin-bottom: 10px !important;
+        -webkit-line-clamp: 2 !important;
+        line-height: 1.4 !important;
+    }
+
+    .news-card-meta {
+        font-size: 10px !important;
+        padding-top: 8px !important;
+    }
+
+    .news-category-tag {
+        padding: 3px 6px !important;
+        font-size: 8px !important;
+        top: 8px !important;
+        left: 8px !important;
+        border-radius: 8px !important;
+    }
+
+    .read-more-btn {
+        padding: 4px 8px !important;
+        font-size: 9px !important;
+        border-radius: 8px !important;
+    }
+
+    /* Category Filter手機版 */
+    .category-filter {
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .category-btn {
+        padding: 6px 12px !important;
+        font-size: 11px !important;
         border-radius: 15px;
     }
 
-    .card-title {
-        width: 170px;
-        font-size: 16px;
+    /* Load More Button手機版 */
+    .load-more-section {
+        margin-top: 25px;
     }
 
-    .card-desc {
-        width: 170px;
-        height: 50px;
-        font-size: 12px;
-    }
-
-    .card-footer {
-        width: 170px;
-        font-size: 10px;
+    .load-more-btn {
+        padding: 10px 25px;
+        font-size: 14px;
     }
 
     .arrow {
