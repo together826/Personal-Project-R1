@@ -479,14 +479,14 @@ Trail頁面手機版篩選器樣式 - 新增
         /* 固定圖片高度 */
     }
 
-    /* News Cards 平板版樣式優化 - 修正版 - 只影響news頁面 */
-    .news-cards-section .news-grid {
+    /* News Cards 平板版樣式優化 - 修正版 */
+    .news-grid {
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 20px !important;
         /* 移除 justify-items: center，讓卡片正常對齊 */
     }
 
-    .news-cards-section .news-card {
+    .news-card {
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -495,16 +495,15 @@ Trail頁面手機版篩選器樣式 - 新增
         display: flex;
         flex-direction: column;
         height: 100%;
-        width: 100%;
-        /* 確保卡片填滿網格區域 */
+        width: 100%; /* 確保卡片填滿網格區域 */
     }
 
-    .news-cards-section .news-card:hover {
+    .news-card:hover {
         transform: translateY(-3px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
 
-    .news-cards-section .news-card-image {
+    .news-card-image {
         width: 100%;
         height: 180px;
         background-size: cover;
@@ -513,7 +512,7 @@ Trail頁面手機版篩選器樣式 - 新增
         flex-shrink: 0;
     }
 
-    .news-cards-section .news-category-tag {
+    .news-category-tag {
         position: absolute;
         top: 12px;
         left: 12px;
@@ -525,14 +524,14 @@ Trail頁面手機版篩選器樣式 - 新增
         font-weight: bold;
     }
 
-    .news-cards-section .news-card-content {
+    .news-card-content {
         padding: 18px;
         display: flex;
         flex-direction: column;
         flex: 1;
     }
 
-    .news-cards-section .news-card-title {
+    .news-card-title {
         font-size: 16px;
         color: #283A29;
         margin-bottom: 10px;
@@ -545,7 +544,7 @@ Trail頁面手機版篩選器樣式 - 新增
         text-overflow: ellipsis;
     }
 
-    .news-cards-section .news-card-desc {
+    .news-card-desc {
         font-size: 13px;
         color: #666;
         line-height: 1.5;
@@ -558,7 +557,7 @@ Trail頁面手機版篩選器樣式 - 新增
         text-overflow: ellipsis;
     }
 
-    .news-cards-section .news-card-meta {
+    .news-card-meta {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -567,12 +566,12 @@ Trail頁面手機版篩選器樣式 - 新增
         margin-top: auto;
     }
 
-    .news-cards-section .news-card-meta>span {
+    .news-card-meta > span {
         font-size: 10px;
         color: #999;
     }
 
-    .news-cards-section .read-more-btn {
+    .read-more-btn {
         background: #334B35;
         color: white;
         padding: 6px 14px;
@@ -583,7 +582,7 @@ Trail頁面手機版篩選器樣式 - 新增
         transition: background 0.3s ease;
     }
 
-    .news-cards-section .read-more-btn:hover {
+    .read-more-btn:hover {
         background: #E8A520;
     }
 
@@ -699,12 +698,12 @@ Trail頁面手機版篩選器樣式 - 新增
         z-index: 10 !important;
     }
 
-    /* Trail頁面篩選器顯示/隱藏邏輯 - 只影響trail頁面 */
-    body.page-default .desktop-filter-section {
+    /* Trail頁面篩選器顯示/隱藏邏輯 */
+    .desktop-filter-section {
         display: none;
     }
-
-    body.page-default .mobile-trail-filters {
+    
+    .mobile-trail-filters {
         display: block;
     }
 
@@ -949,141 +948,15 @@ Trail頁面手機版篩選器樣式 - 新增
         font-size: 16px;
     }
 
-    /* 隱藏首頁trail section中的slogan-fixed */
-    .slogan-fixed {
-        display: none;
-    }
-
-    /* More Button調整 */
-    .more-button {
-        margin-top: 20px;
-        padding: 8px 25px;
-        font-size: 18px;
-    }
-
-    /* 首頁 Trail Section 調整 - 平板版顯示2張卡片 */
-    .trail-images {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .trail-images .trail-card {
-        width: 320px !important;
-        height: 500px !important;
-        flex: none !important;
-    }
-
-    /* 隱藏第3張卡片 */
-    .trail-images .trail-card:nth-child(3) {
-        display: none !important;
-    }
-
-    /* 在平板版直接顯示資訊，不需要hover */
-    .trail-images .trail-info {
-        opacity: 1 !important;
-        transform: translateY(0%) !important;
-        height: 500px !important;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        color: #FFF;
-        padding: 24px 24px 60px 24px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
-    .trail-images .trail-info h2 {
-        font-size: 60px !important;
-        margin-bottom: 30px !important;
-        margin-top: 20px !important;
-        writing-mode: horizontal-tb !important;
-        text-orientation: mixed !important;
-        text-align: left !important;
-        margin-left: 0 !important;
-        letter-spacing: normal !important;
-    }
-
-    .trail-images .trail-info p {
-        font-size: 15px !important;
-        line-height: 22px !important;
-        display: -webkit-box;
-        -webkit-line-clamp: 8;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    /* 首頁 Trail Section 調整 - 手機版顯示1張卡片 */
-    .trail-images {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .trail-images .trail-card {
-        width: 300px !important;
-        height: 450px !important;
-        flex: none !important;
-    }
-
-    /* 隱藏第2張和第3張卡片 */
-    .trail-images .trail-card:nth-child(2),
-    .trail-images .trail-card:nth-child(3) {
-        display: none !important;
-    }
-
-    /* 在手機版直接顯示資訊，不需要hover */
-    .trail-images .trail-info {
-        opacity: 1 !important;
-        transform: translateY(0%) !important;
-        height: 450px !important;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        color: #FFF;
-        padding: 24px 24px 50px 24px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
-    .trail-images .trail-info h2 {
-        font-size: 55px !important;
-        margin-bottom: 25px !important;
-        margin-top: 15px !important;
-        writing-mode: horizontal-tb !important;
-        text-orientation: mixed !important;
-        text-align: left !important;
-        margin-left: 0 !important;
-        letter-spacing: normal !important;
-    }
-
-    .trail-images .trail-info p {
-        font-size: 14px !important;
-        line-height: 20px !important;
-        display: -webkit-box;
-        -webkit-line-clamp: 6;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    /* Trail Cards調整 - 改為2列網格布局 - 只影響trail頁面的trail-list */
-    body.page-default .trail-list {
+    /* Trail Cards調整 - 改為2列網格布局 */
+    .trail-list {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 15px !important;
         flex-direction: unset !important;
     }
 
-    /* Trail頁面的trail-card樣式 - 只影響trail頁面 */
-    body.page-default .trail-list .trail-card {
+    .trail-card {
         background: #334B35 !important;
         border-radius: 15px !important;
         overflow: hidden !important;
@@ -1097,12 +970,12 @@ Trail頁面手機版篩選器樣式 - 新增
         width: 100% !important;
     }
 
-    body.page-default .trail-list .trail-card:hover {
+    .trail-card:hover {
         transform: translateY(-3px) !important;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
     }
 
-    body.page-default .trail-list .trail-image-container {
+    .trail-image-container {
         width: 100% !important;
         height: 120px !important;
         position: relative !important;
@@ -1112,25 +985,25 @@ Trail頁面手機版篩選器樣式 - 新增
         background: white !important;
     }
 
-    body.page-default .trail-list .trail-image {
+    .trail-image {
         width: 100% !important;
         height: 100% !important;
         position: relative !important;
         overflow: hidden !important;
     }
 
-    body.page-default .trail-list .trail-image img {
+    .trail-image img {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
         transition: all 0.3s ease !important;
     }
 
-    body.page-default .trail-list .trail-card:hover .trail-image img {
+    .trail-card:hover .trail-image img {
         transform: scale(1.05) !important;
     }
 
-    body.page-default .trail-list .trail-badges {
+    .trail-badges {
         position: absolute !important;
         top: 8px !important;
         left: 8px !important;
@@ -1139,7 +1012,7 @@ Trail頁面手機版篩選器樣式 - 新增
         gap: 4px !important;
     }
 
-    body.page-default .trail-list .difficulty-badge {
+    .difficulty-badge {
         padding: 3px 6px !important;
         border-radius: 8px !important;
         color: white !important;
@@ -1148,7 +1021,7 @@ Trail頁面手機版篩選器樣式 - 新增
         text-align: center !important;
     }
 
-    body.page-default .trail-list .elevation-badge {
+    .elevation-badge {
         background: rgba(0, 0, 0, 0.7) !important;
         color: white !important;
         padding: 3px 6px !important;
@@ -1157,7 +1030,7 @@ Trail頁面手機版篩選器樣式 - 新增
         text-align: center !important;
     }
 
-    body.page-default .trail-list .trail-content {
+    .trail-content {
         flex: 1 !important;
         padding: 12px !important;
         display: flex !important;
@@ -1166,11 +1039,11 @@ Trail頁面手機版篩選器樣式 - 新增
         color: white !important;
     }
 
-    body.page-default .trail-list .trail-header {
+    .trail-header {
         margin-bottom: 6px !important;
     }
 
-    body.page-default .trail-list .trail-name {
+    .trail-name {
         font-size: 14px !important;
         font-weight: bold !important;
         color: white !important;
@@ -1183,7 +1056,7 @@ Trail頁面手機版篩選器樣式 - 新增
         text-overflow: ellipsis !important;
     }
 
-    body.page-default .trail-list .trail-location {
+    .trail-location {
         color: #B8C5B9 !important;
         font-size: 10px !important;
         display: flex !important;
@@ -1191,12 +1064,12 @@ Trail頁面手機版篩選器樣式 - 新增
         gap: 2px !important;
     }
 
-    body.page-default .trail-list .trail-location i {
+    .trail-location i {
         color: #E8A520 !important;
         font-size: 10px !important;
     }
 
-    body.page-default .trail-list .trail-stats {
+    .trail-stats {
         display: flex !important;
         flex-wrap: wrap !important;
         gap: 4px !important;
@@ -1204,7 +1077,7 @@ Trail頁面手機版篩選器樣式 - 新增
         font-size: 9px !important;
     }
 
-    body.page-default .trail-list .stat-item {
+    .stat-item {
         display: flex !important;
         align-items: center !important;
         gap: 2px !important;
@@ -1215,12 +1088,12 @@ Trail頁面手機版篩選器樣式 - 新增
         white-space: nowrap !important;
     }
 
-    body.page-default .trail-list .stat-item i {
+    .stat-item i {
         color: #E8A520 !important;
         font-size: 8px !important;
     }
 
-    body.page-default .trail-list .trail-footer {
+    .trail-footer {
         display: flex !important;
         flex-direction: column !important;
         gap: 6px !important;
@@ -1230,7 +1103,7 @@ Trail頁面手機版篩選器樣式 - 新增
         width: 100% !important;
     }
 
-    body.page-default .trail-list .trail-meta {
+    .trail-card .trail-meta {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         gap: 3px 6px !important;
@@ -1243,7 +1116,7 @@ Trail頁面手機版篩選器樣式 - 新增
         padding: 0 !important;
     }
 
-    body.page-default .trail-list .rating {
+    .trail-card .rating {
         display: flex !important;
         align-items: center !important;
         gap: 2px !important;
@@ -1254,11 +1127,11 @@ Trail頁面手機版篩選器樣式 - 新增
         justify-content: flex-start !important;
     }
 
-    body.page-default .trail-list .view-count {
+    .trail-card .view-count {
         display: contents !important;
     }
 
-    body.page-default .trail-list .view-count span {
+    .trail-card .view-count span {
         display: flex !important;
         align-items: center !important;
         gap: 2px !important;
@@ -1271,26 +1144,26 @@ Trail頁面手機版篩選器樣式 - 新增
         padding: 0 !important;
     }
 
-    body.page-default .trail-list .view-count span:nth-child(1) {
+    .trail-card .view-count span:nth-child(1) {
         grid-column: 1 !important;
     }
 
-    body.page-default .trail-list .view-count span:nth-child(2) {
+    .trail-card .view-count span:nth-child(2) {
         grid-column: 2 !important;
     }
 
-    body.page-default .trail-list .stars {
+    .stars {
         color: #E8A520 !important;
         font-size: 10px !important;
         text-align: left !important;
     }
 
-    body.page-default .trail-list .rating span {
+    .rating span {
         font-size: 8px !important;
         text-align: left !important;
     }
 
-    body.page-default .trail-list .icon-small {
+    .icon-small {
         width: 10px !important;
         height: 10px !important;
         vertical-align: middle !important;
@@ -1299,17 +1172,11 @@ Trail頁面手機版篩選器樣式 - 新增
         flex-shrink: 0 !important;
     }
 
-    /* 隱藏首頁trail section中的slogan-fixed */
-    .slogan-fixed {
-        display: none;
-    }
-
     /* Headlines Section RWD版本直接加上陰影 */
     .main-headline,
     .side-headline {
         box-shadow: 5px 5px 0px rgba(232, 165, 32, 1) !important;
     }
-
     .news-section {
         padding: 40px 20px;
     }
@@ -1343,14 +1210,14 @@ Trail頁面手機版篩選器樣式 - 新增
         right: 20px;
     }
 
-    /* News Cards 手機版樣式優化 - 修正版 - 只影響news頁面 */
-    .news-cards-section .news-grid {
+    /* News Cards 平板版樣式優化 - 修正版 */
+    .news-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 15px !important;
         /* 移除 justify-items: center，讓卡片正常對齊 */
     }
 
-    .news-cards-section .news-card {
+    .news-card {
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -1359,16 +1226,15 @@ Trail頁面手機版篩選器樣式 - 新增
         display: flex;
         flex-direction: column;
         height: 100%;
-        width: 100%;
-        /* 確保卡片填滿網格區域 */
+        width: 100%; /* 確保卡片填滿網格區域 */
     }
 
-    .news-cards-section .news-card:hover {
+    .news-card:hover {
         transform: translateY(-3px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
 
-    .news-cards-section .news-card-image {
+    .news-card-image {
         width: 100%;
         height: 140px;
         background-size: cover;
@@ -1377,7 +1243,7 @@ Trail頁面手機版篩選器樣式 - 新增
         flex-shrink: 0;
     }
 
-    .news-cards-section .news-category-tag {
+    .news-category-tag {
         position: absolute;
         top: 10px;
         left: 10px;
@@ -1389,14 +1255,14 @@ Trail頁面手機版篩選器樣式 - 新增
         font-weight: bold;
     }
 
-    .news-cards-section .news-card-content {
+    .news-card-content {
         padding: 15px;
         display: flex;
         flex-direction: column;
         flex: 1;
     }
 
-    .news-cards-section .news-card-title {
+    .news-card-title {
         font-size: 15px;
         color: #283A29;
         margin-bottom: 8px;
@@ -1409,7 +1275,7 @@ Trail頁面手機版篩選器樣式 - 新增
         text-overflow: ellipsis;
     }
 
-    .news-cards-section .news-card-desc {
+    .news-card-desc {
         font-size: 12px;
         color: #666;
         line-height: 1.5;
@@ -1422,7 +1288,7 @@ Trail頁面手機版篩選器樣式 - 新增
         text-overflow: ellipsis;
     }
 
-    .news-cards-section .news-card-meta {
+    .news-card-meta {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -1431,18 +1297,18 @@ Trail頁面手機版篩選器樣式 - 新增
         margin-top: auto;
     }
 
-    .news-cards-section .news-card-meta .left-info {
+    .news-card-meta .left-info {
         display: flex;
         flex-direction: column;
         gap: 2px;
     }
 
-    .news-cards-section .news-card-meta .left-info>span {
+    .news-card-meta .left-info > span {
         font-size: 9px;
         color: #999;
     }
 
-    .news-cards-section .read-more-btn {
+    .read-more-btn {
         background: #334B35;
         color: white;
         padding: 4px 8px;
@@ -1454,7 +1320,7 @@ Trail頁面手機版篩選器樣式 - 新增
         flex-shrink: 0;
     }
 
-    .news-cards-section .read-more-btn:hover {
+    .read-more-btn:hover {
         background: #E8A520;
     }
 
@@ -1468,7 +1334,6 @@ Trail頁面手機版篩選器樣式 - 新增
         font-size: 12px;
     }
 
-    /* 首頁news-cards調整 */
     .news-cards-container {
         gap: 15px;
         overflow-x: auto;
@@ -1476,7 +1341,7 @@ Trail頁面手機版篩選器樣式 - 新增
         padding: 0 10px;
     }
 
-    .news-cards-container .news-card {
+    .news-card {
         width: 220px;
         flex-shrink: 0;
         scroll-snap-align: center;
@@ -1792,18 +1657,18 @@ Trail頁面手機版篩選器樣式 - 新增
         padding: 15px 0;
     }
 
-    /* Trail頁面手機版篩選器樣式調整 - 只影響trail頁面 */
-    body.page-default .mobile-filter-row {
+    /* Trail頁面手機版篩選器樣式調整 */
+    .mobile-filter-row {
         flex-direction: column;
         gap: 10px;
     }
-
-    body.page-default .trail-filter-select {
+    
+    .trail-filter-select {
         font-size: 13px;
         padding: 10px 12px;
     }
-
-    body.page-default .mobile-trail-filters {
+    
+    .mobile-trail-filters {
         padding: 15px;
         margin-bottom: 20px;
     }
@@ -2028,72 +1893,15 @@ Trail頁面手機版篩選器樣式 - 新增
         font-size: 14px;
     }
 
-    /* 首頁 Trail Section 調整 - 小手機版顯示1張卡片 */
-    .trail-images {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .trail-images .trail-card {
-        width: 280px !important;
-        height: 420px !important;
-        flex: none !important;
-    }
-
-    /* 隱藏第2張和第3張卡片 */
-    .trail-images .trail-card:nth-child(2),
-    .trail-images .trail-card:nth-child(3) {
-        display: none !important;
-    }
-
-    /* 在小手機版直接顯示資訊，不需要hover */
-    .trail-images .trail-info {
-        opacity: 1 !important;
-        transform: translateY(0%) !important;
-        height: 420px !important;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        color: #FFF;
-        padding: 20px 20px 45px 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
-    .trail-images .trail-info h2 {
-        font-size: 45px !important;
-        margin-bottom: 20px !important;
-        margin-top: 15px !important;
-        writing-mode: horizontal-tb !important;
-        text-orientation: mixed !important;
-        text-align: left !important;
-        margin-left: 0 !important;
-        letter-spacing: normal !important;
-    }
-
-    .trail-images .trail-info p {
-        font-size: 13px !important;
-        line-height: 19px !important;
-        display: -webkit-box;
-        -webkit-line-clamp: 8;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    /* Trail Cards調整 - 手機版2列網格優化 - 只影響trail頁面 */
-    body.page-default .trail-list {
+    /* Trail Cards調整 - 手機版2列網格優化 */
+    .trail-list {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px !important;
         flex-direction: unset !important;
     }
 
-    body.page-default .trail-list .trail-card {
+    .trail-card {
         background: #334B35 !important;
         border-radius: 12px !important;
         overflow: hidden !important;
@@ -2107,12 +1915,12 @@ Trail頁面手機版篩選器樣式 - 新增
         width: 100% !important;
     }
 
-    body.page-default .trail-list .trail-card:hover {
+    .trail-card:hover {
         transform: translateY(-2px) !important;
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15) !important;
     }
 
-    body.page-default .trail-list .trail-image-container {
+    .trail-image-container {
         width: 100% !important;
         height: 100px !important;
         position: relative !important;
@@ -2122,25 +1930,25 @@ Trail頁面手機版篩選器樣式 - 新增
         background: white !important;
     }
 
-    body.page-default .trail-list .trail-image {
+    .trail-image {
         width: 100% !important;
         height: 100% !important;
         position: relative !important;
         overflow: hidden !important;
     }
 
-    body.page-default .trail-list .trail-image img {
+    .trail-image img {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
         transition: all 0.3s ease !important;
     }
 
-    body.page-default .trail-list .trail-card:hover .trail-image img {
+    .trail-card:hover .trail-image img {
         transform: scale(1.05) !important;
     }
 
-    body.page-default .trail-list .trail-badges {
+    .trail-badges {
         position: absolute !important;
         top: 6px !important;
         left: 6px !important;
@@ -2149,7 +1957,7 @@ Trail頁面手機版篩選器樣式 - 新增
         gap: 3px !important;
     }
 
-    body.page-default .trail-list .difficulty-badge {
+    .difficulty-badge {
         padding: 2px 5px !important;
         border-radius: 6px !important;
         color: white !important;
@@ -2158,7 +1966,7 @@ Trail頁面手機版篩選器樣式 - 新增
         text-align: center !important;
     }
 
-    body.page-default .trail-list .elevation-badge {
+    .elevation-badge {
         background: rgba(0, 0, 0, 0.7) !important;
         color: white !important;
         padding: 2px 5px !important;
@@ -2167,7 +1975,7 @@ Trail頁面手機版篩選器樣式 - 新增
         text-align: center !important;
     }
 
-    body.page-default .trail-list .trail-content {
+    .trail-content {
         flex: 1 !important;
         padding: 10px !important;
         display: flex !important;
@@ -2176,11 +1984,11 @@ Trail頁面手機版篩選器樣式 - 新增
         color: white !important;
     }
 
-    body.page-default .trail-list .trail-header {
+    .trail-header {
         margin-bottom: 5px !important;
     }
 
-    body.page-default .trail-list .trail-name {
+    .trail-name {
         font-size: 12px !important;
         font-weight: bold !important;
         color: white !important;
@@ -2193,7 +2001,7 @@ Trail頁面手機版篩選器樣式 - 新增
         text-overflow: ellipsis !important;
     }
 
-    body.page-default .trail-list .trail-location {
+    .trail-location {
         color: #B8C5B9 !important;
         font-size: 9px !important;
         display: flex !important;
@@ -2201,12 +2009,12 @@ Trail頁面手機版篩選器樣式 - 新增
         gap: 2px !important;
     }
 
-    body.page-default .trail-list .trail-location i {
+    .trail-location i {
         color: #E8A520 !important;
         font-size: 9px !important;
     }
 
-    body.page-default .trail-list .trail-stats {
+    .trail-stats {
         display: flex !important;
         flex-wrap: wrap !important;
         gap: 3px !important;
@@ -2214,7 +2022,7 @@ Trail頁面手機版篩選器樣式 - 新增
         font-size: 8px !important;
     }
 
-    body.page-default .trail-list .stat-item {
+    .stat-item {
         display: flex !important;
         align-items: center !important;
         gap: 2px !important;
@@ -2225,12 +2033,12 @@ Trail頁面手機版篩選器樣式 - 新增
         white-space: nowrap !important;
     }
 
-    body.page-default .trail-list .stat-item i {
+    .stat-item i {
         color: #E8A520 !important;
         font-size: 7px !important;
     }
 
-    body.page-default .trail-list .trail-footer {
+    .trail-footer {
         display: flex !important;
         flex-direction: column !important;
         gap: 5px !important;
@@ -2240,7 +2048,7 @@ Trail頁面手機版篩選器樣式 - 新增
         width: 100% !important;
     }
 
-    body.page-default .trail-list .trail-meta {
+    .trail-card .trail-meta {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         gap: 3px 5px !important;
@@ -2253,7 +2061,7 @@ Trail頁面手機版篩選器樣式 - 新增
         padding: 0 !important;
     }
 
-    body.page-default .trail-list .rating {
+    .trail-card .rating {
         display: flex !important;
         align-items: center !important;
         gap: 2px !important;
@@ -2264,11 +2072,11 @@ Trail頁面手機版篩選器樣式 - 新增
         justify-content: flex-start !important;
     }
 
-    body.page-default .trail-list .view-count {
+    .trail-card .view-count {
         display: contents !important;
     }
 
-    body.page-default .trail-list .view-count span {
+    .trail-card .view-count span {
         display: flex !important;
         align-items: center !important;
         gap: 2px !important;
@@ -2282,37 +2090,32 @@ Trail頁面手機版篩選器樣式 - 新增
         padding: 0 !important;
     }
 
-    body.page-default .trail-list .view-count span:nth-child(1) {
+    .trail-card .view-count span:nth-child(1) {
         grid-column: 1 !important;
     }
 
-    body.page-default .trail-list .view-count span:nth-child(2) {
+    .trail-card .view-count span:nth-child(2) {
         grid-column: 2 !important;
     }
 
-    body.page-default .trail-list .stars {
+    .stars {
         color: #E8A520 !important;
         font-size: 9px !important;
         text-align: left !important;
     }
 
-    body.page-default .trail-list .rating span {
+    .rating span {
         font-size: 7px !important;
         text-align: left !important;
     }
 
-    body.page-default .trail-list .icon-small {
+    .icon-small {
         width: 8px !important;
         height: 8px !important;
         vertical-align: middle !important;
         margin-right: 2px !important;
         filter: invert(65%) sepia(85%) saturate(1320%) !important;
         flex-shrink: 0 !important;
-    }
-
-    /* 確保首頁trail section中的slogan-fixed隱藏 */
-    .slogan-fixed {
-        display: none;
     }
 
     /* News Section手機版樣式調整 */
@@ -2350,42 +2153,41 @@ Trail頁面手機版篩選器樣式 - 新增
         right: 10px;
     }
 
-    /* News Cards手機版優化 - 修正版 - 只影響news頁面 */
-    .news-cards-section .news-grid {
+    /* News Cards手機版優化 - 修正版 */
+    .news-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px !important;
         /* 移除 justify-items: center，讓卡片正常對齊 */
     }
 
-    .news-cards-section .news-card {
+    .news-card {
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        /* 確保卡片填滿網格區域 */
+        width: 100%; /* 確保卡片填滿網格區域 */
         display: flex;
         flex-direction: column;
         height: 100%;
     }
 
-    .news-cards-section .news-card-image {
+    .news-card-image {
         height: 120px !important;
         width: 100%;
     }
 
-    .news-cards-section .news-card-content {
+    .news-card-content {
         padding: 12px !important;
         flex: 1;
         display: flex;
         flex-direction: column;
     }
 
-    .news-cards-section .news-card-title {
+    .news-card-title {
         font-size: 13px !important;
         margin-bottom: 6px !important;
         -webkit-line-clamp: 2 !important;
     }
 
-    .news-cards-section .news-card-desc {
+    .news-card-desc {
         font-size: 11px !important;
         margin-bottom: 10px !important;
         -webkit-line-clamp: 2 !important;
@@ -2393,7 +2195,7 @@ Trail頁面手機版篩選器樣式 - 新增
         flex: 1;
     }
 
-    .news-cards-section .news-card-meta {
+    .news-card-meta {
         padding-top: 8px !important;
         margin-top: auto;
         display: flex;
@@ -2402,19 +2204,19 @@ Trail頁面手機版篩選器樣式 - 新增
         border-top: 1px solid #eee;
     }
 
-    .news-cards-section .news-card-meta .left-info {
+    .news-card-meta .left-info {
         display: flex;
         flex-direction: column;
         gap: 1px;
     }
 
-    .news-cards-section .news-card-meta .left-info>span {
+    .news-card-meta .left-info > span {
         font-size: 8px !important;
         color: #999;
         line-height: 1.2;
     }
 
-    .news-cards-section .news-category-tag {
+    .news-category-tag {
         padding: 3px 6px !important;
         font-size: 8px !important;
         top: 8px !important;
@@ -2422,7 +2224,7 @@ Trail頁面手機版篩選器樣式 - 新增
         border-radius: 8px !important;
     }
 
-    .news-cards-section .read-more-btn {
+    .read-more-btn {
         padding: 4px 8px !important;
         font-size: 9px !important;
         border-radius: 8px !important;
@@ -2732,68 +2534,6 @@ Trail頁面手機版篩選器樣式 - 新增
     .footer-disclaimer {
         font-size: 10px;
         padding-top: 15px;
-    }
-
-    /* Trail Section篩選器文字置中 - 手機版 */
-    .filter-section .filter summary {
-        text-align: center;
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        padding: 10px 8px;
-        position: relative;
-        padding-right: 0 !important;
-    }
-    
-    .filter-section .filter summary span {
-        text-align: center !important;
-        display: inline-block !important;
-        font-size: 14px;
-        font-weight: 500;
-        color: #283A29;
-        width: auto !important;
-        margin-right: 8px;
-    }
-    
-    .filter-section .filter summary::after {
-        content: "▼";
-        position: relative !important;
-        right: auto !important;
-        top: auto !important;
-        transform: none !important;
-        margin-left: 4px;
-        color: #283A29;
-        font-size: 12px;
-    }
-    
-    .filter-section .filter[open] summary::after {
-        content: "▲";
-    }
-    
-    .filter-section .filter {
-        position: relative;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        background: #f8f8f8;
-        border: 1px solid #ddd;
-        border-radius: 15px;
-        min-height: 45px;
-    }
-    
-    /* 下拉選單內容也置中 */
-    .filter-section .filter ul {
-        text-align: center;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-    }
-    
-    .filter-section .filter ul li {
-        text-align: center;
-        padding: 8px 12px;
     }
 }
 
