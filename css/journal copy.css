@@ -249,7 +249,7 @@ body {
 
 .article-card:hover {
     transform: scale(1.02);
-    border-radius: 15;
+    border-radius: 0;
     box-shadow: 3px 3px 0px 3px #E8A520;
 }
 
@@ -372,48 +372,7 @@ body {
 @media (max-width: 768px) {
     .authors-grid {
         flex-direction: column;
-        gap: 12px;
-    }
-
-    .author-card {
-        display: flex;
         align-items: center;
-        text-align: left;
-        padding: 15px;
-        gap: 15px;
-        width: 100%;
-    }
-
-    .author-avatar {
-        width: 70px;
-        height: 70px;
-        margin: 0;
-        flex-shrink: 0;
-    }
-
-    .author-content {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .author-name {
-        margin-bottom: 4px;
-        font-size: 16px;
-    }
-
-    .author-stats {
-        margin-bottom: 4px;
-        font-size: 12px;
-    }
-
-    .author-desc {
-        font-size: 11px;
-        line-height: 1.3;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
     }
 
     .hot-articles-section {
