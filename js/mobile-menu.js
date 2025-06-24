@@ -65,13 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ESC鍵關閉選單
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && mobileMenuOverlay && mobileMenuOverlay.classList.contains('active')) {
-            closeMenu();
-        }
-    });
-
     // 視窗大小改變時處理選單狀態
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768 && mobileMenuOverlay && mobileMenuOverlay.classList.contains('active')) {
@@ -118,65 +111,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 手機版搜尋功能
-    const mobileSearchBtn = document.querySelector('.mobile-search-bar .search-btn');
-    const mobileSearchInput = document.querySelector('.mobile-search-bar .search-input');
-    
-    if (mobileSearchBtn && mobileSearchInput) {
-        mobileSearchBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const searchTerm = mobileSearchInput.value.trim();
-            if (searchTerm) {
-                console.log('搜尋關鍵字:', searchTerm);
-                // 這裡可以加入實際的搜尋功能
-                // 例如：performSearch(searchTerm);
-                
-                // 視覺反饋
-                this.style.background = '#d4941c';
-                setTimeout(() => {
-                    this.style.background = '#E8A520';
-                }, 200);
-            }
-        });
-
-        // Enter鍵搜尋
-        mobileSearchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                mobileSearchBtn.click();
-            }
-        });
-    }
-
-    // 桌面版搜尋功能 (保持相容性)
-    const desktopSearchBtn = document.querySelector('.desktop-filter-section .search-btn');
-    const desktopSearchInput = document.querySelector('.desktop-filter-section .search-input');
-    
-    if (desktopSearchBtn && desktopSearchInput) {
-        desktopSearchBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const searchTerm = desktopSearchInput.value.trim();
-            if (searchTerm) {
-                console.log('搜尋關鍵字:', searchTerm);
-                // 這裡可以加入實際的搜尋功能
-                
-                // 視覺反饋
-                this.style.background = '#d4941c';
-                setTimeout(() => {
-                    this.style.background = '#E8A520';
-                }, 200);
-            }
-        });
-
-        // Enter鍵搜尋
-        desktopSearchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                desktopSearchBtn.click();
-            }
-        });
-    }
 
     // ==========================================================================
-    // 實用功能函數 - 可選實作
+    // 實用功能
     // ==========================================================================
     
     // 同步桌面版和手機版的篩選狀態
@@ -204,12 +141,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function filterTrails(filterType, selectedValue) {
         // 這個函數可以用來實際篩選顯示的路線
         console.log(`執行篩選: ${filterType} = ${selectedValue}`);
-        
-        // 示例：可以根據selectedValue來隱藏/顯示特定的trail-card
-        // const trailCards = document.querySelectorAll('.trail-card');
-        // trailCards.forEach(card => {
-        //     // 根據篩選條件決定是否顯示此卡片
-        // });
         
         // 更新結果數量顯示
         updateResultsCount();
@@ -291,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // 清除搜尋 (全域函數)
+    // 清除搜尋
     window.clearSearch = function() {
         // 清除搜尋框
         if (mobileSearchInput) mobileSearchInput.value = '';
