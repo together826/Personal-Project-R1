@@ -99,7 +99,7 @@ body {
 .featured-image {
     flex: 1;
     height: 400px;
-    background: url(/img/j/心得020.JPG) center center / cover no-repeat;
+    /* background: url(/img/j/心得020.JPG) center center / cover no-repeat; */
     border-radius: 20px;
     box-shadow: 3px 3px 0px #E8A520;
     cursor: pointer;
